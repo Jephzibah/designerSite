@@ -1,0 +1,94 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Photographer's Template</title>
+     <meta name="description" content="A professional photography template showcasing high-quality images and photography services.">
+     <meta name="keywords" content="photography, professional photography, portfolio, image gallery">
+     
+     <!-- Open Graph / Facebook -->
+     <meta property="og:type" content="website">
+     <meta property="og:url" content="PAGE_URL">
+     <meta property="og:title" content="Photographer's Template">
+     <meta property="og:description" content="A professional photography template showcasing high-quality images and photography services.">
+     <meta property="og:image" content="URL_TO_IMAGE">
+     
+     <!-- Twitter -->
+     <meta name="twitter:card" content="summary_large_image">
+     <meta name="twitter:url" content="PAGE_URL">
+     <meta name="twitter:title" content="Photographer's Template">
+     <meta name="twitter:description" content="A professional photography template showcasing high-quality images and photography services.">
+     <meta name="twitter:image" content="URL_TO_IMAGE">
+     <meta name="twitter:site" content="@YourTwitterHandle">
+     
+     <!-- Canonical Link -->
+     <link rel="canonical" href="PAGE_URL">
+     
+     <!-- Favicon -->
+     <link rel="icon" type="image/png" href="images/favicon.png">
+     
+     <link rel="stylesheet" href="style.css">
+     <script src="https://kit.fontawesome.com/ae17b5e2d7.js" crossorigin="anonymous" defer></script>
+     <!-- This allows use of any icons in their free section: https://fontawesome.com/search?o=r&m=free -->
+     <style>
+        .pageWrap {
+            display: flex;
+            flex-wrap: wrap-reverse;
+            justify-content: center;
+            gap: 25px;
+        }
+        #contactWrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1em;
+        }
+        #contactWrap p {
+            margin: 5px 15px;
+            text-align: center;
+        }
+        .fa-chevron-down {
+            position: relative;
+            opacity: 0;
+            animation: fadeInDown 2s forwards ease;
+            animation-delay: 2s;
+        }
+        #bookMe {
+            display: none;
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                top: -75px
+            }
+            to {
+                opacity: 1;
+                top: 0;
+            }
+        }
+     </style>
+ </head>
+ 
+ <body>
+     <div id="header-placeholder"></div>
+     <div class="pageWrap">
+        <div>
+            <img src="images/about2.webp" alt="Contact Me"/>
+        </div>
+        <div id="contactWrap">
+            <h1>Contact Me</h1>
+            <p>
+                I would love to hear from you! Please fill out the form below & I will reach out to you, shortly.
+            </p>
+            <i class="fa-solid fa-chevron-down"></i>
+            <div id="contactFormContainer"></div> 
+        </div>
+   
+     </div> <!-- pageWrap -->
+     <div id="footer-placeholder"></div>
+     <script src="scripts.js"></script>
+ </body>
+ 
+ </html>
