@@ -1,58 +1,4 @@
 // scripts.js
-//Slider
-let slideIndex = 1;
-let autoplayInterval;
-
-function changeSlide(n) {
-    showSlides(slideIndex += n);
-    resetAutoplay();
-}
-
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-    resetAutoplay();
-}
-
-function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("slide");
-    let dots = document.getElementsByClassName("dot");
-    if (n > slides.length) { slideIndex = 1; }
-    if (n < 1) { slideIndex = slides.length; }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].className = slides[i].className.replace(" current", "");
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" current", "");
-    }
-    if (slides.length > 0) {
-        slides[slideIndex - 1].className += " current";
-    }
-    if (dots.length > 0 && dots.length >= slideIndex) {
-        dots[slideIndex - 1].className += " current";
-    }
-}
-
-function startAutoplay() {
-    autoplayInterval = setInterval(function () {
-        changeSlide(1);
-    }, 9000); // Change slides every 9 seconds, feel free to change this to suit your needs BUT be sure to update slide.current timing in style.css
-}
-
-function stopAutoplay() {
-    clearInterval(autoplayInterval);
-}
-
-function resetAutoplay() {
-    stopAutoplay();
-    startAutoplay();
-}
-
-function addHoverPause() {
-    const slider = document.querySelector('.slider');
-    slider.addEventListener('mouseenter', stopAutoplay);
-    slider.addEventListener('mouseleave', startAutoplay);
-}
 // Accordions
 var accItem = document.getElementsByClassName('accordionItem');
 var accHD = document.getElementsByClassName('accordionItemHeading');
@@ -116,18 +62,6 @@ startCarousel();
 var carousel = document.querySelector('.testimonial-carousel');
 carousel.addEventListener('mouseenter', stopCarousel);
 carousel.addEventListener('mouseleave', startCarousel);
-function matchHeights() {
-    var serviceBoxes = document.querySelectorAll('.homepageServiceBox');
-    serviceBoxes.forEach(function (box) {
-        var imgDiv = box.querySelector('div:first-child');
-        var textDiv = box.querySelector('div:last-child');
-        var imgHeight = imgDiv.offsetHeight;
-        textDiv.style.height = imgHeight + 'px';
-    });
-}
-// Run the function on window load and resize
-window.onload = matchHeights;
-window.onresize = matchHeights;
 }
 
 // Form logic
@@ -268,25 +202,58 @@ function initMobileNav() {
         });
     }
 }
+var homeGrid = document.querySelectorAll('.homepageServiceBox');
+homeGrid && console.log('resizing boxes');
+function matchHeights() {
+    var serviceBoxes = document.querySelectorAll('.homepageServiceBox');
+    serviceBoxes.forEach(function (box) {
+        var imgDiv = box.querySelector('div:first-child');
+        var textDiv = box.querySelector('div:last-child');
+        var imgHeight = imgDiv.offsetHeight;
+        textDiv.style.height = imgHeight + 'px';
+    });
+}
+// Run the function on window load and resize
+window.onload = matchHeights;
+window.onresize = matchHeights;
 
-var slider = document.querySelector('.slider');
-if (slider) {    
+var slider = document.querySelector('.headerBanner .bgImage');
+if (slider) {
 // Slider nav dots
-    window.onload = function () {
-        let slideContainer = document.querySelector('.slider');
-        let dotContainer = slideContainer.querySelector('.dots');
-        let slides = slideContainer.getElementsByClassName('slide');
-        for (let i = 0; i < slides.length; i++) {
-            let dot = document.createElement('span');
-            dot.classList.add('dot');
-            dot.onclick = function () { currentSlide(i + 1); };
-            dotContainer.appendChild(dot);
-        }
-        currentSlide(1); // Initialize to show the first slide
-    };
-    showSlides(slideIndex);
-    //addHoverPause(); 
-    // I didn't like this with the animation I set on the slider - it's here if you want to use it, though
+var images = [
+    'http://itsthatwebguy.com/site03/wp-content/uploads/2023/12/mag_design_port01.webp',
+    'http://itsthatwebguy.com/site03/wp-content/uploads/2023/12/mag_design_port02.webp',
+    'http://itsthatwebguy.com/site03/wp-content/uploads/2023/12/mag_design_port03.webp',
+    'http://itsthatwebguy.com/site03/wp-content/uploads/2023/12/mag_design_port05.webp',
+    'http://itsthatwebguy.com/site03/wp-content/uploads/2023/12/mag_design_port06.webp',
+    'http://itsthatwebguy.com/site03/wp-content/uploads/2023/12/mag_design_port07.webp',
+    'http://itsthatwebguy.com/site03/wp-content/uploads/2023/12/mag_design_port08.webp',
+    'http://itsthatwebguy.com/site03/wp-content/uploads/2023/12/mag_design_port09.webp',
+    'http://itsthatwebguy.com/site03/wp-content/uploads/2023/12/mag_design_port10.webp',
+    'http://itsthatwebguy.com/site03/wp-content/uploads/2023/12/mag_design_port11.webp',
+    'http://itsthatwebguy.com/site03/wp-content/uploads/2023/12/mag_design_port12.webp',
+    'http://itsthatwebguy.com/site03/wp-content/uploads/2023/12/mag_design_port13.webp',
+    // Add more image URLs
+];
+var currentIndex = 0;
+var bgImages = document.querySelectorAll('.headerBanner .bgImage');
+bgImages[0].style.opacity = '1'; // Make the first image visible initially
+
+function changeBackground() {
+    var nextIndex = (currentIndex + 1) % images.length;
+    var currentImage = bgImages[currentIndex % 2];
+    var nextImage = bgImages[nextIndex % 2];
+
+    nextImage.style.backgroundImage = 'url(' + images[nextIndex] + ')';
+    nextImage.style.opacity = '1'; // Fade in next image
+    setTimeout(function() {
+        currentImage.style.opacity = '0'; // Fade out current image
+    }, 100); // Short delay to ensure overlap during crossfade
+
+    currentIndex = nextIndex;
+}
+
+setInterval(changeBackground, 4500); 
 }
     // conditionally load our form
     loadContactForm();

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photographer's Template</title>
+    <title>Designer's Template</title>
     <meta name="description" content="A professional photography template showcasing high-quality images and photography services.">
     <meta name="keywords" content="photography, professional photography, portfolio, image gallery">
     
@@ -32,140 +32,82 @@
     <script src="https://kit.fontawesome.com/ae17b5e2d7.js" crossorigin="anonymous" defer></script>
     <!-- This allows use of any icons in their free section: https://fontawesome.com/search?o=r&m=free -->
 </head>
-
 <body>
     <div id="header-placeholder"></div>
 <!-- I deliberately left the pageWrap container off the homepage to make it full-bleed. Feel free to edit as you need!
 -->
-    <div class="slider">
-
-        <!-- Welcome Message -->
-        <div id="atfWelcome">
-            <h1>
-                Smallville Photography
-            </h1>
-        </div>
-
-        <div class="slides">
-            <div class="slide current"><img src="images/slide2.webp" alt="Image 2"></div>
-            <div class="slide"><img src="images/slide3.webp" alt="Image 3"></div>
-            <div class="slide"><img src="images/slide4.webp" alt="Image 4"></div>
-            <div class="slide"><img src="images/slide5.webp" alt="Image 5"></div>
-            <div class="slide"><img src="images/slide6.webp" alt="Image 6"></div>
-            <div class="slide"><img src="images/slide8.webp" alt="Image 8"></div>
-            <div class="slide"><img src="images/slide9.webp" alt="Image 9"></div>
-            <div class="slide"><img src="images/slide10.webp" alt="Image 10"></div>
-            <div class="slide"><img src="images/slide11.webp" alt="Image 11"></div>
-            <div class="slide"><img src="images/slide12.webp" alt="Image 12"></div>
-            <div class="slide"><img src="images/slide13.webp" alt="Image 13"></div>
-            <div class="slide"><img src="images/slide14.webp" alt="Image 14"></div>
-            <!-- Add more slides as needed -->
-        </div>
-        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-        <a class="next" onclick="changeSlide(1)">&#10095;</a>
-        <div class="dots"></div>
-    </div> <!-- slider -->
-    <div id="tickerTapeContainer">
-        <a href="contact.html" class="tickerTapeText">Now booking graduation sessions!</a>
+    <div id="headerBannerCont">
+        <div class="headerBanner">
+            <div class="imageWrapper">
+                <div class="bgImage" style="background-image: url('images/mag_design_port14.webp');"></div>
+                <div class="bgImage" style=""></div>
+            </div>
+            <div id="headerBannerText">
+                <h1>
+                    Magnolia Design
+                </h1>
+                <p>
+                    Award-Winning Interior Design
+                </p>
+            </div>
+        </div> <!-- headerBanner -->
     </div>
-    <div class="services">
-        <div id="serviceHeader">
-            <h2>Services</h2>
-        </div>
-        <div id="serviceImages">
-            <img src="images/service1.webp" alt="Photography Services" />
-            <img src="images/service2.webp" alt="Photography Services" />
-        </div>
-        <div id="serviceTable">
-            <h3>FAQ</h3>
-            <div class="accordionWrapper">
-    
-                <div class="accordionItem close">
-                  <h4 class="accordionItemHeading">What kind of photography do you offer?</h4>
-                  <div class="accordionItemContent">
-                    <div>
-                        <p>I specialize in:</p>
-                        <ul>
-                            <li>Family Portraits</li>
-                            <li><strong>Studio Photography</strong></li>
-                            <li>Graduation</li>
-                            <li>Fashion/Modeling</li>
-                            <li>Commercial</li>
-                            <li>Event Photography</li>
-                        </ul>
-                    </div>
-                  </div>
+
+    <div class="homePageCont" id="hp2">
+        <div id="homepageServices">
+            <div class="homepageServiceBox">
+                <div>
+                    <img src="images/homepageConsultation.webp" alt="Home Makeover Consultation" />
                 </div>
-    
-                <div class="accordionItem close">
-                  <h4 class="accordionItemHeading">Do you provide videography services?</h4>
-                  <div class="accordionItemContent">
-                    <div>
-                        <p>Of course - I'm more than happy to talk about your video production project with you!</p>
-                    </div>
-                  </div>
+                <div>
+                    <h3>
+                        Home Makeover Consultation
+                    </h3>
+                    <p>
+                        Full Service Home Makeover Consultation With A Certified Designer
+                    </p>
+                    <button><a href="/home-makeover-consultation/">
+                        Learn More
+                    </a></button>
                 </div>
+            </div>
     
-                <div class="accordionItem close">
-                  <h4 class="accordionItemHeading">How far in advance should I book with you?</h4>
-                  <div class="accordionItemContent">
-                    <div>
-                        <p>On average, it's best if a client books within at least 1 month in advance to ensure that I have availability. There's always the possibility of a cancellation, though, in which case I may be available on short notice!</p>
-                    </div>
-                  </div>
+            <div class="homepageServiceBox">
+                <div>
+                    <img src="images/homepageFullRoom.webp" alt="Full Room Redesign" />
                 </div>
+                <div>
+                    <h3>
+                        Full Room Redesign
+                    </h3>
+                    <p>
+                        get your home looking fab without even having to lift a finger
+                    </p>
+                    <button><a href="/full-room-redesign/">
+                        Learn More
+                    </a></button>
+                </div>
+            </div>
     
-            </div><!-- accordionWrapper -->
-            <a class="ctaBtn" href="services.html">My Services</a>
-        </div>
-    </div> <!-- services -->
-    <div class="serviceBox">
-        <div>
-            <a href="contact.html"><img src="images/graduation.webp" alt="Graduation Photography Services" /></a>
-        </div>
-        <div>
-            <a href="contact.html"><h3>
-                Graduations
-            </h3></a>
-        </div>
-    </div> <!-- serviceBox -->
-    <div class="serviceBox serviceBoxFlip">
-        <div>
-            <a href="contact.html"><img src="images/slide1.webp" alt="Family portraiture" /></a>
-        </div>
-        <div>
-            <a href="contact.html"><h3>
-                Family Portraiture
-            </h3></a>
-        </div>
-    </div> <!-- serviceBox -->
-    <div class="serviceBox">
-        <div>
-            <a href="contact.html"><img src="images/slide7.webp" alt="Personal Portraiture Services" /></a>
-        </div>
-        <div>
-            <a href="contact.html"><h3>
-                Personal Portraiture
-            </h3></a>
-        </div>
-    </div> <!-- serviceBox -->
-    <div class="serviceBox serviceBoxFlip">
-        <div>
-            <a href="contact.html"><img src="images/eventPhoto.webp" alt="Event Photography Services" /></a>
-        </div>
-        <div>
-            <a href="contact.html"><h3>
-                Event Photography
-            </h3></a>
-        </div>
-    </div> <!-- serviceBox -->
-    <div id="aboutMe">
-        <div>
-            <p>I’m a professional phorographer & videographer providing family & business photography services to the Savannah, GA & surrounding areas. I can easily provide photography & videography for Pooler, Richmond Hill, Tybee Island, and surrounding areas.</p>
-            <p>Capture the essence of life's moments with a unique and professional photography service. Make sure those beautiful moments in life stay with you for days to come. Whether you're commemorating a special occasion, celebrating love, or seeking to showcase your unique personality, I'm dedicated to crafting visually stunning and emotionally resonant pictures. From portrait sessions to full wedding videography, my services cater to your every photographic need. With each photo, I strive to capture the beauty of life's little moments.</p>
-            <a class="ctaBtn" href="portfolio.html">Explore My Portfolio</a>
-        </div>
-    </div>
+            <div class="homepageServiceBox">
+                <div>
+                    <img src="images/homepageOffice.webp" alt="Commercial Space Styling" />
+                </div>
+                <div>
+                    <h3>
+                        Commercial Space Styling
+                    </h3>
+                    <p>
+                        elevate your commercial spaces for your staff & customers
+                    </p>
+                    <button><a href="/commercial-space-styling/">
+                        Learn More
+                    </a></button>
+                </div>
+            </div>
+        </div> <!-- homepageServices -->
+    </div> <!-- hp2 -->
+    
     <div id="hp3">
         
         <!-- Testimonials -->
@@ -173,25 +115,41 @@
     
           <div class="testimonial-item">
             <p>
-                "No one quite takes pictures like Mary. She will be my first and favorite photographer for any shoot I'm a part of."
+                We recently had our home redesigned by this amazing team, and we couldn't be happier with the results! Every room reflects our personal style yet has that professional touch that we could never have achieved on our own. Their attention to detail is unmatched. Highly recommend for anyone looking to refresh their living space!
                 <br />
-                <span>George</span>
+                <span>Sophia and Michael Johnson</span>
             </p>
           </div>
     
           <div class="testimonial-item">
             <p>
-                "Mary was so patient and creative with our session. I've shown my entire family the pictures she took. I'm in love with these pictures!" 
+                As a first-time homeowner, I was overwhelmed with the prospect of decorating my new space. Thankfully, the designers here were incredible - they listened to my ideas, offered professional advice, and transformed my house into a stylish, cohesive home. Their use of color and texture was particularly impressive. A 5-star experience!
                 <br />
-                <span>Connie</span>
+                <span>Ethan Greenberg</span>
             </p>
           </div>
     
           <div class="testimonial-item">
             <p>
-                "Mary is truly a visionary when it comes to capturing the essence of family in her photos, a true craftsman & artist." 
+                I hired this interior design team to revamp my boutique, and the results were nothing short of spectacular. They have an incredible eye for space utilization and created an ambiance that both my customers and I adore. The team's professionalism and creativity were evident in every aspect of the project. They truly went above and beyond.
                 <br />
-                <span>Max</span>
+                <span>Ava Chen</span>
+            </p>
+          </div>
+    
+          <div class="testimonial-item">
+            <p>
+                This team's expertise in blending functionality with elegance is remarkable. My office space was transformed into a sleek, efficient, yet comfortable working environment. Their design not only reflects my brand's values but also creates a welcoming atmosphere for my clients. Their service was worth every penny!
+                <br />
+                <span>Oliver Smith</span>
+            </p>
+          </div>
+    
+          <div class="testimonial-item">
+            <p>
+                Working with this interior design team was an absolute delight. They managed to turn my cramped and cluttered living room into a chic, airy space that I now love spending time in. Their suggestions for storage solutions were innovative and practical. They truly understand how to make the most out of a small space!
+                <br />
+                <span>Mia Rodriguez</span>
             </p>
           </div>
     
@@ -199,78 +157,53 @@
         <div class="testimonial-navdots"></div>
         
     </div> <!-- hp3 -->
-    <div id="process">
-        <div id="processTable">
-            <div class="processItem">
-                <div class="processItemNumber">
-                    [01]
-                </div>
-                <div>
-                    <h3>
-                        Planning
-                    </h3>
+    
+    <div id="hp4">
+        
+        <div class="homePageCont">
+            <h2>Featured Projects</h2>
+            <button><a href="/portfolio/">Portfolio</a></button>
+            <div class="fourCardsCont">
+                <a href="/greek-villa/" class="fourCards">
+                    <img src="images/project1.webp" alt="featured project image" />
+                    <h4>
+                        Greek Villa
+                    </h4>
                     <p>
-                        During the planning stage, we'll talk about what you're looking for in your photography or videography. I'll ask questions about the session type, the location, number of people, and timeframe requirements. Think of this as the "getting to know each other" stage.
+                        Full Home Makeover
                     </p>
-                </div>
-            </div> <!-- processItem -->
-            <div class="processItem">
-                <div class="processItemNumber">
-                    [02]
-                </div>
-                <div>
-                    <h3>
-                        Contract & Scheduling
-                    </h3>
+                </a><!-- fourCards -->
+                <a href="/chicago-loft/" class="fourCards">
+                    <img src="images/project2.webp" alt="featured project image" />
+                    <h4>
+                        Chicago Loft
+                    </h4>
                     <p>
-                        Once we've gotten to know each other, you can put your deposit down to secure your scheduled session & we'll formalize it with a simple contract that clearly defines what my deliverables are. I will provide you with a definite day & time in the contract for the shoot as well as a set date for my finished deliverables.
+                        Full Home Makeover
                     </p>
-                </div>
-            </div> <!-- processItem -->
-            <div class="processItem">
-                <div class="processItemNumber">
-                    [03]
-                </div>
-                <div>
-                    <h3>
-                        Preparation
-                    </h3>
+                </a><!-- fourCards -->
+                <a href="/jones-home/" class="fourCards">
+                    <img src="images/project3.webp" alt="featured project image" />
+                    <h4>
+                        Jones Home
+                    </h4>
                     <p>
-                        Depending on the type of photography service, we will provide any needed guidance on preparation, outfit choices, and any other minor details. This ensures that you feel confident and ready to make the most of your photo session.
+                        Full Home Makeover
                     </p>
-                </div>
-            </div> <!-- processItem -->
-            <div class="processItem">
-                <div class="processItemNumber">
-                    [04]
-                </div>
-                <div>
-                    <h3>
-                        Shooting Day
-                    </h3>
+                </a><!-- fourCards -->
+                <a href="/photo-studio/" class="fourCards">
+                    <img src="images/project4a.webp" alt="featured project image" />
+                    <h4>
+                        Photo Studio
+                    </h4>
                     <p>
-                        We'll meet up at your shoot location at the appointed time & have a blast while we're in session. After we're done shooting, you're done! I'll reach out to you with your edited files by the date that is specified in your contract, if not sooner.
+                        Commercial Space Design
                     </p>
-                </div>
-            </div> <!-- processItem -->
-            <div class="processItem">
-                <div class="processItemNumber">
-                    [05]
-                </div>
-                <div>
-                    <h3>
-                        Delivery
-                    </h3>
-                    <p>
-                        This is what it's all about - once I've professionally touched up your images &/or video files, I will provide a link that you're able to retrieve your files from via their website & you can share them with whoever you want, order prints, canvasses, etc. from the service of your choice. 
-                    </p>
-                </div>
-            </div> <!-- processItem -->
-        </div>
-        <div id="processHeader">
-            <h2>Process</h2>
-        </div>
-    </div> <!-- process -->
+                </a><!-- fourCards -->
+            </div><!-- fourCardsCont -->
+        </div> <!-- homePageCont -->
+        
+    </div> <!-- hp4 -->    
 
     <div id="footer-placeholder"></div>
     <script src="scripts.js"></script>

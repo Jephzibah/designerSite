@@ -5,17 +5,18 @@
 		changing these root colors & fonts to your brand's palette & typography
 	 */
 	--body-background: #fff;
-	--color-1: #c08879;
-	--color-2: #ecaf92;
-	--color-3: #f1c7b2;
-	--color-4: #f5d7c8;
-	--color-5: #fdf0e8;
-	--color-6: 253,240,232; /* this is an rgb of color-5 & is used in the accordion */
+	--accent-color: #7f8c59;
+	--color-1: #e1eade;
+	--color-2: #d0dde5;
+	--color-3: #f7f6f2;
+	--color-4: #b3c3cc;
+	--color-5: #f1f0ec;
+	--color-6: 241, 240, 236; /* this is an rgb of color-5 & is used in the accordion */
 	--translucent1: rgba(255,255,255,.5);
 	--translucent2: rgba(0,0,0,.5);
 	--text-color: #323232;
 	--text-color2: #000;
-	--header-font: 'Spoiled', cursive;
+	--header-font: 'PlayfairDisplay-Regular', cursive;
 	--main-body-font: 'Lato-Regular', sans-serif;
 	--light-font: 'Lato-Light', sans-serif;
 	--bold-font: 'Lato-Bold', sans-serif;
@@ -23,13 +24,13 @@
 	--light-italic-font: 'Lato-LightItalic', sans-serif;
 }
 @font-face {
-    font-family: 'Spoiled';
-    src: url('fonts/Spoiled.eot');
-    src: url('fonts/Spoiled.eot?#iefix') format('embedded-opentype'),
-         url('fonts/Spoiled.woff2') format('woff2'),
-         url('fonts/Spoiled.woff') format('woff'),
-         url('fonts/Spoiled.ttf')  format('truetype'),
-         url('fonts/Spoiled.svg#Spoiled') format('svg');
+    font-family: 'PlayfairDisplay-Regular';
+    src: url('fonts/PlayfairDisplay-Regular.eot');
+    src: url('fonts/PlayfairDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+         url('fonts/PlayfairDisplay-Regular.woff2') format('woff2'),
+         url('fonts/PlayfairDisplay-Regular.woff') format('woff'),
+         url('fonts/PlayfairDisplay-Regular.ttf')  format('truetype'),
+         url('fonts/PlayfairDisplay-Regular.svg#PlayfairDisplay-Regular') format('svg');
 }
 @font-face {
     font-family: 'Lato-Black';
@@ -128,6 +129,11 @@ body, html {
     overflow-x: clip;
 	background-color: var(--body-background);
 }
+a {
+	cursor: pointer;
+	text-decoration: none;
+	color: var(--text-color2);
+}
 h1,h2 {
 	font-family: var(--header-font);
 	word-spacing: 5px;
@@ -163,6 +169,10 @@ button {
 	.ctaBtn:hover,
 	button:hover {
 		background-color: var(--text-color);
+		color: var(--color-4);
+	}
+	.ctaBtn:hover a,
+	button:hover a {
 		color: var(--color-4);
 	}
 }
@@ -229,7 +239,7 @@ header {
 }
 
 .navbar-links a {
-    transition: color 0.3s ease-out;
+    transition: color 50ms ease-out;
     text-decoration: none;
     color: var(--text-color);
 }
@@ -287,15 +297,26 @@ header {
 	bottom: 35%;
 	right: 15px;
 }
-.navbar-links .dropdown:hover .dropdown-content {
-    max-height: 500px;
-	padding: 10px;
-	z-index: 100;
-}
-.navbar-links .dropdown:hover .dropdown-content a {
-	opacity: 1;
-	position: relative;
-	z-index: 100;
+@media screen and (min-width: 1025px){
+	.navbar-links .dropdown:hover .dropdown-content {
+		max-height: 500px;
+		z-index: 100;
+	}
+	.navbar-links .dropdown:hover .dropdown-content li {
+		padding: 10px;
+		transition: 50ms ease;
+	}
+	.navbar-links .dropdown:hover .dropdown-content li:hover {
+		background-color: var(--text-color);
+	}
+	.navbar-links .dropdown:hover .dropdown-content li:hover a {
+		color: var(--color-2);
+	}
+	.navbar-links .dropdown:hover .dropdown-content a {
+		opacity: 1;
+		position: relative;
+		z-index: 100;
+	}	
 }
 .subMenu:hover .subDropdown-content {
 	display: flex;
@@ -308,10 +329,11 @@ header {
 	opacity: 1;
 }
 @media screen and (min-width:1025px) {
+	a:hover,
 	.navbar-links a:hover,
 	.dropdown:hover:after,
 	.subMenu:hover:after {
-		color: var(--color-1);
+		color: var(--accent-color);
 	}	
 }
 .toggle-button {
@@ -403,74 +425,416 @@ header {
     }
 }
 
-/* Slider CSS */
-.slider {
-    position: relative;
-    max-width: 100%;
-    margin: auto;
-    overflow: hidden;
-    background-color: var(--text-color2);
-}
-#atfWelcome {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9;
-    color: var(--text-color);
-    background-color: var(--translucent1);
-}
-#atfWelcome h1 {
-	font-family: var(--header-font);
-	font-size: 8vw;
-	font-weight: 100;
-	opacity: .5;
-	padding: 0 20px; /* If you swap out your font, this will probably need to be adjusted */
-}
-.slide {
-    display: none;
-    aspect-ratio: 1920/920;
-    overflow: hidden;
-    position: relative;
-}
-.slide img {
+#headerBannerCont {
 	position: absolute;
+	top: 140px;
+	left: 0;
+	width: 100vw;
+	z-index: 2;
+}
+.headerBanner {
+	position: relative;
+	aspect-ratio: 950/315;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background 2s ease-in-out;
+	clip-path: polygon(0% 0%, 100% 0, 100% 90%, 50% 100%, 0 90%);
+}
+.headerBanner:before {
+	position: absolute;
+	content: '';
+	background: var(--translucent2);
+	opacity: .7;
 	width: 100%;
-	height: auto;
+	height: 100%;
 	top: 0;
 	left: 0;
+	z-index: 1;
+	clip-path: polygon(0% 0%, 100% 0, 100% 90%, 50% 100%, 0 90%);
+}
+.headerBanner .imageWrapper {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.headerBanner .bgImage {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	transition: opacity 2s ease-in-out;
+	opacity: 0;
+}
+.headerBanner .bgImage.visible {
+	opacity: 1;
+}
+#headerBannerText {
+  width: 1000px;
+  max-width: 100%;
+  position: relative;
+  padding: 0 55px;
+  z-index: 1;
+}
+#headerBannerText h1 {
+	font-size: 6vw;
+	margin: 5px auto;
+	color: var(--body-background);
+	text-align: center;
+	opacity:0;
+	animation: fadeIn 3s linear;
+	animation-fill-mode: forwards;
+	animation-delay: 1.5s;
+	will-change: opacity;
+}
+#headerBannerText p {
+	font-style: italic;
+	color: var(--body-background);
+	text-align: center;
+	opacity:0;
+	animation: fadeIn 3s linear;
+	animation-fill-mode: forwards;
+	animation-delay: 3s;
+	will-change: opacity;
+	font-size: 20px;
+	margin: 0;
+}
+#hp2 {
+	position: relative;
+	padding-top: 35vw;
+}
+#homepageServices {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.homepageServiceBox {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--color-3);
+	justify-content: space-between;
+}
+.homepageServiceBox:nth-of-type(2) {
+	flex-direction: column-reverse;
+}
+.homepageServiceBox>div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.homepageServiceBox h3 {
+	text-transform: uppercase;
+	font-size: 23px;
+	text-align: center;
+	margin-top: 25px;
+}
+.homepageServiceBox button {
+	text-transform: uppercase;
+	text-align: center;
+}
+.homepageServiceBox p {
+	text-transform: capitalize;
+	text-align: center;
+	margin: 1em;
+}
+
+.homePageCont {
+	width: 1200px;
+	margin: auto;
 	max-width: 100%;
 }
-.slide:before {
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: var(--text-color2);
+.homePageCont img {
+	max-width: 100%;
 }
-.slide.current {
-    display: block;
-    animation: fadeEffect 9s forwards ease;
+#hp3 {
+	padding: 75px 0;
+	position: relative;
+}
+#hp3imgDiv img {
+  width: 450px;
+  max-width: 100%;
+  margin: auto;
+  display: block;
+}
+#processSteps {
+	margin: 35px 0;
+}
+#processSteps li {
+	list-style: none;
+	border-top: 1px solid var(--text-color);
+	line-height: 2.5;
+	width: 350px;
+	max-width: 100%;
+}
+#processSteps li:last-of-type {
+	border-bottom: 1px solid var(--text-color);
+}
+#hp4 {
+	padding: 75px 0;
+	position: relative;
+	text-align: center;
+}
+#hp4:before {
+	position: absolute;
+	content: '';
+	width: calc(100% + 100px);
+	height: 100%;
+	background: var(--color-1);
+	left: -50px;
+	top: 0;
+}
+#hp4 h2 {
+	text-align: center;
+	position: relative;
+}
+#hp4 h2:after {
+	content: '';
+	width: 95px;
+	height: 3px;
+	border-top: 2px solid var(--text-color);
+	display: table;
+	margin: auto;
+	position: relative;
+	top: .5em;
+}
+#hp4 button {
+	display: table;
+	margin: auto;
+	position: relative;
+	top: 1em;
+}
+.fourCardsCont {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	gap: 15px;
+	margin-top: 3em;
+}
+.fourCards {
+	flex: 1;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.fourCards h4 {
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 20px;
+	margin: 10px auto;
+}
+.fourCards h4:after {
+	content: '';
+	width: 45px;
+	height: 3px;
+	border-top: 2px solid var(--text-color);
+	display: table;
+	margin: auto;
+	position: relative;
+	top: .25em;
+}
+.fourCards p {
+	text-align: center;
+	font-style: italic;
+}
+.fourCards:hover {
+	transform: scale(1.025);
+}
+@media screen and (max-width:975px) {
+	.fourCards {
+		flex: 45%;
+	}
+}
+@media screen and (max-width:450px) {
+	.fourCards h4 {
+		font-size: 15px;
+	}
+	.fourCards p {
+		font-size: 11px;
+	}
+}
+@media screen and (max-width:1100px) {
+	.headerBanner {
+		aspect-ratio: 15/9;
+	}
+	#hp2 {
+	  padding-top: 60vw;
+	}
+}
+@media screen and (max-width:992px){
+	#hp2 {
+	  padding-top: 60vw;
+	}
+}
+@media screen and (max-width:921px){
+	#headerBannerCont {
+		top: 2em;
+	}
+	#hp2 {
+	  padding-top: 60vw;
+	}
+	.homepageServiceBox h3 {
+		font-size: 20px;
+		margin: 0 0 10px;
+	}
+	.homepageServiceBox p {
+		font-size: 14px;
+		margin: 0 1em 1em;
+	}
+	.homepageServiceBox button {
+		font-size: 14px;
+	}
+}
+@media screen and (max-width: 800px) {
+	#headerBannerText {
+		padding: 0 25px;
+	}
+	#headerBannerText h1 {
+		font-size: 10vw;
+		margin-bottom: 0;
+	}
+	#headerBannerText p
+	{
+	  font-size: 14px;
+	  line-height: 1.5;
+	}
+	.homepageServiceBox h3 {
+		font-size: 16px;
+	}
+}
+@media screen and (max-width: 650px) {
+	.homepageServiceBox {
+		flex: 100%;
+		flex-direction: row;
+	}
+	.homepageServiceBox:nth-of-type(2) {
+		flex: 100%;
+		flex-direction: row-reverse;
+	}
+	.homepageServiceBox > div {
+		flex: 1;
+	}
+}
+@media screen and (max-width: 600px) {
+	.headerBanner {
+		aspect-ratio: 11/9;
+	}
+	#hp2 {
+	   padding-top: 75vw;
+	}
+/*		Might need to uncomment this if the p text becomes lengthy
+	#headerBannerText p {
+		display: none;
+	}
+*/		
+}
+@media screen and (max-width: 475px) {
+	#hp2 {
+	   padding-top: 75vw;
+	}
+	.homepageServiceBox p {
+		line-height: 1.25;
+		margin: 0 1px .5em;
+		font-size: 12px;
+	}
+	.homepageServiceBox h3 {
+		line-height: 1.25;
+		font-size: 14px;
+		margin: 0 0 4px;
+	}
+	.homepageServiceBox button {
+		font-size: 11px;
+		padding: 7px 10px;
+	}
+	#post-2065 {
+		padding-left:0;
+		padding-right:0;
+	}
+}
+@media screen and (max-width: 350px) {
+	#hp2 {
+	   padding-top: 75vw;
+	}
+}
+@keyframes fadeIn {
+	from {opacity:0;}
+	to {opacity:1;}
+}
+/*Testimonials*/
+.testimonial-carousel {
+	height: 200px;
+	width: 100%;
+	background: linear-gradient(var(--color-4), var(--color-2));
+	border-radius: 5px;
+	position: relative;
+	overflow: hidden;
+}
+.testimonial-carousel .testimonial-item {
+  display: none;
+  position: absolute; 
+  width: 80%; 
+  height: 100%; 
+  transition: opacity 0.5s;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-@keyframes fadeEffect {
-    0%, 100% { opacity: 0; }
-    10%, 90% { opacity: 1; }
+.testimonial-carousel .testimonial-item p {
+	color: var(--body-background);
+	font-size: 17px;
+	margin-bottom: 0;
+}
+.testimonial-carousel .testimonial-item span {
+	font-size: 20px;
+	font-weight: 900;
+	margin-top: 25px;
+	font-style: italic;
 }
 
-@keyframes fadeInUp {
-    from {
-        transform: translateY(250px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+.testimonial-carousel .testimonial-item.active {
+  display: flex;
+  align-items:center;
+  opacity: 1;
+}
+.testimonial-dots {
+	position: relative;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.testimonial-dot {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: var(--color-4);
+	margin: 0 5px;
+	cursor: pointer;
+}
+
+.testimonial-dot.active {
+	background-color: var(--text-color);
+}
+
+@media screen and (max-width: 1100px) {
+	.testimonial-carousel p {
+		font-size: 13px !important;
+		line-height: 20px;
+	}
+}
+@media screen and (max-width: 350px) {
+	.testimonial-carousel {
+		height: 275px;
+	}
 }
 
 .prev, .next {
@@ -483,7 +847,7 @@ header {
     font-size: 24px;
     user-select: none;
     padding: 3px 7px;
-    background: rgba(0,0,0,.23);
+    background: var(--translucent2);
     border-radius: 3px;
     transition: 250ms ease;
     animation: fadeInUp 3s ease forwards;
@@ -493,13 +857,13 @@ header {
 }
 .prev:hover,
 .next:hover{
-    background: rgba(0,0,0,.9);
+    background: var(--text-color);
 }
 
 .prev { left: .5em; }
 .next { right: .5em; }
 
-.dots {
+/* .dots {
     width: 100%;
     text-align: center;
     position: absolute;
@@ -526,7 +890,7 @@ header {
 
 .current, .dot:hover {
     opacity: 1;
-}
+} */
 /* homepage */
 	/* Ticker Tape styles */
 	#tickerTapeContainer {
@@ -764,21 +1128,13 @@ header {
 		padding: 35px;
 		margin: unset;
 	}
-	#hp3 {
-		background: var(--color-2);
-		padding: 75px 0;
-		position: relative;
-	}
-	@media screen and (max-width: 450px) {
-		#hp3 {padding: 45px 0 25px;}
-	}
 	/*Testimonials*/
 	.testimonial-carousel {
 		height: 200px;
-		width: 900px;
+		width: 90%;
 		max-width: 100%;
 		margin: auto;
-		background: linear-gradient(var(--color-3), var(--color-5));
+		background: linear-gradient(var(--color-4), var(--color-2));
 		border-radius: 5px;
 		position: relative;
 		overflow: hidden;
