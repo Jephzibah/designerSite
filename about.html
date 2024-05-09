@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About The Photographer</title>
+    <title>About The Designers</title>
     <meta name="description" content="I'm a bike messenger by day & a professional photographer by night.">
     <meta name="keywords" content="photography, professional photography, portfolio, image gallery">
     
@@ -31,181 +31,74 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/ae17b5e2d7.js" crossorigin="anonymous" defer></script>
     <!-- This allows use of any icons in their free section: https://fontawesome.com/search?o=r&m=free -->
+</head>
+<body>
+    <div id="header-placeholder"></div>
     <style>
         .aboutHeader {
             display: flex;
+            flex-direction: row;
             align-items: center;
             justify-content: center;
             flex-wrap: wrap;
             gap: 5%;
+            max-width: 1500px;
             margin: auto;
-            aspect-ratio: 2.5/1;
+        }
+        .aboutHeader:nth-of-type(2) {
+            flex-direction: row-reverse;
         }
         .aboutHeader>div {
             flex:1;
             min-width: 300px;
             padding: 25px;
-            position: relative;
-            height: 100%;
         }
-        #aboutImg1 {
-            width: 300px;
-            position: absolute;
-            height: auto;
-            max-width: 100%;
-            /* box-shadow: 1px 3px 20px #006698; */
-            display: block;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        #aboutImg2 {
-            width: 170px;
-            position: absolute;
+        .aboutHeader img {
+            width: 500px;
             height: auto;
             max-width: 100%;
             display: block;
-            bottom: 15%;
-            left: 75%;
-            transform: translate(-75%, 15%);
-            box-shadow: 0 0 5px var(--text-color2);
+            margin: auto;
         }
         .aboutHeader button {
             display: block;
             margin: auto;
             text-align: center;
         }
-        #services {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1%;
-            max-width: 1500px;
-            margin: auto;
-        }
-        .myServices {
-            flex-basis: 45%;
-            min-width: 300px;
-        }
-        .myServices:nth-of-type(3) {
-            flex-basis: 90%;
-            min-width: 300px;
-        }
-        @media screen and (max-width: 1150px) {
-            .aboutHeader {
-                aspect-ratio: 2/1;
-            }
-        }
-        @media screen and (max-width: 900px) {
-            .aboutHeader {
-                aspect-ratio: auto;
-                margin-bottom: 35px;
-            }
-            #aboutImg1 {
-                position: relative;
-            }
-            #aboutImg2 {
-                bottom: 0;
-                left: 90%;
-            }
-        }
-        @media screen and (max-width: 740px) {
-            .aboutHeader {
+        @media screen and (max-width: 1000px) {
+            .aboutHeader,
+            .aboutHeader:nth-of-type(2) {
                 flex-direction: column-reverse;
             }
-            #aboutImg2 {
-                bottom: 5%;
-                left: 80%;
-            }
             .aboutHeader>div,
-            .myServices {
-                min-width: 90%;
+            .moeServices {
+                min-width: 100%;
             }
         }
     </style>
-
-</head>
-<body>
-    <div id="header-placeholder"></div>
-    <div class="pageWrap">
-        <section class="aboutHeader">
+    <div class="aboutHeader">
             <div>
-                <!-- <img id="aboutImg1" src="images/aboutMe.webp"
-                    alt="about Urban Photo" style="box-shadow: rgb(229, 232, 122) 1px 3px 20px;"> 
-                    I originally created an effect that would make a different color box-shadow (outline)
-                    for this image but decided it was too much cowbell for this template. The script is also 
-                    commented out at the bottom if you want to play around with it.
-                -->
-                <img id="aboutImg1" src="images/aboutMe.webp" alt="about Urban Photo">
-                
-                <img id="aboutImg2" src="images/about2.webp" alt="about Urban Photo" />
+                <img src="images/event_planner87.webp" alt="about us" />
             </div>
             <div>
-                <h2>About UrbanPhoto</h2>
-                <p>I provide professional photography &amp; videography services to the Savannah, GA area as well as
-                    surrounding areas such as Pooler, Tybee Island, &amp; Richmond Hill. My degree is digital media from
-                    the University of South Carolina &amp; my clients range from simple business headshots to
-                    high-demand wedding photography &amp; videography. I enjoy seeing the joy it brings to my clients
-                    when I get it right the first time, every time!
-                </p>
-                <button><a href="contact.html">Let’s Shoot!</a></button>
+                <h2>About Magnolia Design</h2>
+            <p>
+                Magnolia Design is a premier interior design firm renowned for its ability to blend contemporary elegance with classic style, creating unique and luxurious living spaces. Our team of expert designers, led by the visionary Sarah Thompson, brings a wealth of knowledge and experience in high-end design. At Magnolia Design, we believe that a home should be a reflection of its owner's personality, blended seamlessly with elements of comfort and sophistication. Each project we undertake is a journey towards creating an environment that resonates with the client's personal taste, lifestyle, and aspirations. Our portfolio showcases a diverse range of projects, from opulent city apartments to serene country estates, each characterized by an attention to detail, use of high-quality materials, and an impeccable sense of style.
+            </p>
+                <a href="contact.html"><button>Contact Us</button></a>
             </div>
-        </section><!-- aboutHeader -->
-        <div id="services">
-            <section class="myServices">
-                <h2>
-                    Family Photos
-                </h2>
-                <p>
-                    Capture the warmth and joy of your loved ones with our Family Photo Service. Our skilled
-                    photographer
-                    specializes in creating a relaxed and fun atmosphere, perfect for bringing out the natural smiles
-                    and
-                    genuine interactions of your family. Whether it’s a special occasion or a casual day out, we focus
-                    on
-                    capturing the unique bond and personality of your family in every shot. With a blend of candid and
-                    posed
-                    photographs, you’ll receive a beautiful collection of images that tell the story of your family’s
-                    love
-                    and connection.
-                </p>
-                <p></p>
-            </section>
-            <section class="myServices">
-                <h2>
-                    Business Photos<br>
-                </h2>
-                <p>
-                    Present your best self to the world with our Professional Photo Service. Tailored for entrepreneurs,
-                    executives, and professionals, our service focuses on creating polished and sophisticated headshots
-                    and
-                    portraits. We understand the importance of a strong personal brand and work with you to capture
-                    images
-                    that exude confidence, professionalism, and approachability. Perfect for LinkedIn profiles,
-                    corporate
-                    websites, and personal branding, our professional photos are crafted to make a lasting impression.
-                </p>
-            </section> 
-            <section class="myServices">
-                <h2>
-                    Destination Weddings
-                </h2>
-                <p>
-                    Immortalize your once-in-a-lifetime moments with our Destination Wedding Photography Service.
-                    Specializing in capturing the essence of your special day in exotic and picturesque locations, our
-                    photographer combines technical expertise with a keen eye for romantic and scenic backdrops. We
-                    offer
-                    comprehensive coverage of your wedding festivities, ensuring every significant moment is captured
-                    with
-                    elegance and emotion. From intimate ceremonies to grand receptions, our photography will narrate
-                    your
-                    love story against the backdrop of stunning landscapes, making your wedding memories truly
-                    unforgettable.
-                </p>
-            </section> 
-        </div> <!-- services -->
-    </div> <!-- pageWrap -->
-    <div id="footer-placeholder"></div>
+    </div> <!-- aboutHeader -->
+    <div class="aboutHeader">
+        <div>
+            <img src="images/photo-studio6.webp" alt="about us" />
+        </div> <!-- moeServices -->
+        <div>
+            <p>
+                Our approach at Magnolia Design is collaborative and client-focused. We begin each project with an in-depth consultation to understand our client's vision, preferences, and functional needs. This is followed by the development of a customized design concept that balances aesthetics with practicality. Our services cover all aspects of interior design, from space planning and color consultation to selecting furnishings, fabrics, and finishes. We also specialize in bespoke solutions, creating custom furniture and fixtures to meet the specific requirements of a space. At Magnolia Design, we pride ourselves on our commitment to excellence, ensuring that every project we deliver is not only visually stunning but also comfortable, livable, and enduring. Join us in crafting spaces that are not just homes, but works of art.
+            </p>
+        </div> <!-- moeServices -->
+    </div> <!-- aboutHeader -->
+        <div id="footer-placeholder"></div>
     <script src="scripts.js"></script>
     <!-- <script>
         // Script for just this page
