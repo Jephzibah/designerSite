@@ -139,7 +139,7 @@ h1,h2 {
 	word-spacing: 5px;
 }
 h1 {
-	font-size: 40px;
+	font-size: 90px;
 }
 h2 {
 	font-size: 30px;
@@ -150,6 +150,11 @@ h3,h4,h5,h6 {
 p {
 	line-height: 1.5;
 	letter-spacing: .5px;
+}
+@media screen and (max-width: 1000px) {
+	h1 {
+		font-size: 60px;
+	}
 }
 .ctaBtn,
 button {
@@ -624,6 +629,7 @@ header {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	transition: 350ms ease;
 }
 .fourCards h4 {
 	text-transform: uppercase;
@@ -640,6 +646,9 @@ header {
 	margin: auto;
 	position: relative;
 	top: .25em;
+}
+.fourCards img {
+	max-width: 100%;
 }
 .fourCards p {
 	text-align: center;

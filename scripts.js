@@ -221,18 +221,18 @@ var slider = document.querySelector('.headerBanner .bgImage');
 if (slider) {
 // Slider nav dots
 var images = [
-    'http://itsthatwebguy.com/site03/wp-content/uploads/2023/12/mag_design_port01.webp',
-    'http://itsthatwebguy.com/site03/wp-content/uploads/2023/12/mag_design_port02.webp',
-    'http://itsthatwebguy.com/site03/wp-content/uploads/2023/12/mag_design_port03.webp',
-    'http://itsthatwebguy.com/site03/wp-content/uploads/2023/12/mag_design_port05.webp',
-    'http://itsthatwebguy.com/site03/wp-content/uploads/2023/12/mag_design_port06.webp',
-    'http://itsthatwebguy.com/site03/wp-content/uploads/2023/12/mag_design_port07.webp',
-    'http://itsthatwebguy.com/site03/wp-content/uploads/2023/12/mag_design_port08.webp',
-    'http://itsthatwebguy.com/site03/wp-content/uploads/2023/12/mag_design_port09.webp',
-    'http://itsthatwebguy.com/site03/wp-content/uploads/2023/12/mag_design_port10.webp',
-    'http://itsthatwebguy.com/site03/wp-content/uploads/2023/12/mag_design_port11.webp',
-    'http://itsthatwebguy.com/site03/wp-content/uploads/2023/12/mag_design_port12.webp',
-    'http://itsthatwebguy.com/site03/wp-content/uploads/2023/12/mag_design_port13.webp',
+    'images/mag_design_port01.webp',
+    'images/mag_design_port02.webp',
+    'images/mag_design_port03.webp',
+    'images/mag_design_port05.webp',
+    'images/mag_design_port06.webp',
+    'images/mag_design_port07.webp',
+    'images/mag_design_port08.webp',
+    'images/mag_design_port09.webp',
+    'images/mag_design_port10.webp',
+    'images/mag_design_port11.webp',
+    'images/mag_design_port12.webp',
+    'images/mag_design_port13.webp',
     // Add more image URLs
 ];
 var currentIndex = 0;

@@ -3,7 +3,7 @@
  <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Photographer's Template</title>
+     <title>Contact Us</title>
      <meta name="description" content="A professional photography template showcasing high-quality images and photography services.">
      <meta name="keywords" content="photography, professional photography, portfolio, image gallery">
      
@@ -32,61 +32,46 @@
      <script src="https://kit.fontawesome.com/ae17b5e2d7.js" crossorigin="anonymous" defer></script>
      <!-- This allows use of any icons in their free section: https://fontawesome.com/search?o=r&m=free -->
      <style>
-        .pageWrap {
+        .twoCards {
             display: flex;
-            flex-wrap: wrap-reverse;
-            justify-content: center;
+            flex-wrap: wrap;
             gap: 25px;
-        }
-        #contactWrap {
-            display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 1em;
+            padding: 2em;
         }
-        #contactWrap p {
-            margin: 5px 15px;
-            text-align: center;
+        .twoCards>div {
+            flex: 0 1 45%;
         }
-        .fa-chevron-down {
-            position: relative;
-            opacity: 0;
-            animation: fadeInDown 2s forwards ease;
-            animation-delay: 2s;
+        .twoCards img {
+            max-width: 100%;;
         }
-        #bookMe {
-            display: none;
-        }
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                top: -75px
+        @media screen and (max-width: 800px) {
+            .twoCards>div {
+                flex: 0 1 95%;
             }
-            to {
-                opacity: 1;
-                top: 0;
+            .twoCards {
+                padding: 1em;
             }
         }
-     </style>
+    </style>    
  </head>
- 
- <body>
-     <div id="header-placeholder"></div>
-     <div class="pageWrap">
+  <body>
+    <div id="header-placeholder"></div>
+    <div class="twoCards">
         <div>
-            <img src="images/about2.webp" alt="Contact Me"/>
-        </div>
-        <div id="contactWrap">
-            <h1>Contact Me</h1>
+            <h1>
+                Contact Us
+            </h1>
             <p>
-                I would love to hear from you! Please fill out the form below & I will reach out to you, shortly.
+                Got a question for us? We'd love to hear from you! Please fill out the form & we'll be in touch shortly.
             </p>
-            <i class="fa-solid fa-chevron-down"></i>
+            <img src="images/homepageConsultation.webp" alt="contact us">
+        </div>
+        <div>
             <div id="contactFormContainer"></div> 
         </div>
+    </div>
    
-     </div> <!-- pageWrap -->
      <div id="footer-placeholder"></div>
      <script src="scripts.js"></script>
  </body>

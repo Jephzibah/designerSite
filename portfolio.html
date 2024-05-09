@@ -31,470 +31,147 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/ae17b5e2d7.js" crossorigin="anonymous" defer></script>
     <!-- This allows use of any icons in their free section: https://fontawesome.com/search?o=r&m=free -->
+</head>
+<body>
+    <div id="header-placeholder"></div>
     <style>
-        .tab-container {
-          display: flex;
-          border-bottom: 2px solid var(--color-4);
-          width: 100%;
-          background: var(--body-background);
-        }
-    
-        .tab {
-          cursor: pointer;
-          padding: 10px;
-          border-left: 5px solid transparent;
-          margin: 0 !important;
-        }
-    
-        .tab.selected {
-          border-left-color: var(--color4);
-          background-color: var(--color-5);
-          color: var(--text-color);
-        }
-        .tab {
-          cursor: pointer;
-          padding: 10px;
-          border-left: 5px solid transparent;
-        }
-    
-        .tab.selected {
-          border-left-color: var(--color-4);
-        }
-    
-        a {
-            cursor: pointer;
-            text-decoration: none;
-        }
-        .wrapper {
-            display: flex;
-            justify-content: center;
-            gap: 9%;
-            padding-bottom: 100px;
-            align-items: center;
-        }
-      
-        .gallery-title {
-            text-align: center;
-            color: var(--color-3);
-            font-size: 80px;
-            padding-top: 20px;
-            font-family: var(--primary-font);
-        }
-        .fadeIn {
-          animation: fadeInAnimation ease 2.5s;
-          animation-iteration-count: 1;
-          animation-fill-mode: forwards;
-        }
-    
-        @keyframes fadeInAnimation {
-          0% {
-            opacity: 0;
-          }
-          100% {
-            opacity: 1;
-          }
-        }
-        .masonry-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            grid-gap: 10px;
-            columns: 18rem;
-            gap: 1rem;
-        }
-    
-        .masonry-gallery .gallery-item {
+        h1 {
             position: relative;
-            cursor: pointer;
-            margin-bottom: 1rem;
         }
-    
-        .masonry-gallery .gallery-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
+        #hp4 {
+            padding: 25px 0;
+            position: relative;
+            text-align: center;
         }
-        #lightbox {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+        #hp4:before {
+            position: absolute;
+            content: '';
+            width: calc(100% + 100px);
             height: 100%;
-            background-color: var(--translucent2);
-            z-index: 1000;
+            background: #e1eade;
+            left: -50px;
+            top: 0;
+        }
+        #hp4 h2 {
+            text-align: center;
+            position: relative;
+        }
+        #hp4 h2:after {
+            content: '';
+            width: 95px;
+            height: 3px;
+            border-top: 2px solid #323232;
+            display: table;
+            margin: auto;
+            position: relative;
+            top: .5em;
+        }
+        #hp4 button {
+            display: table;
+            margin: auto;
+            position: relative;
+            top: 1em;
+        }
+        .fourCardsCont {
             display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
             align-items: center;
             justify-content: center;
+            position: relative;
+            gap: 35px;
+            margin-top: 3em;
         }
-    
-        #lightbox .close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            font-size: 30px;
-            color: var(--body-background);
+        .fourCards {
+            flex: 0 1 35%;
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
-    
-        #lightbox .prev, #lightbox .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            width: auto;
-            padding: 16px;
-            margin-top: -50px;
-            color: var(--body-background);
-            font-weight: bold;
-            font-size: 24px;
-            transition: 0.6s ease;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
+        .fourCards h4 {
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 20px;
+            margin: 10px auto;
         }
-    
-        #lightbox .prev {
-            left: 0;
-            border-radius: 3px 0 0 3px;
+        .fourCards h4:after {
+            content: '';
+            width: 45px;
+            height: 3px;
+            border-top: 2px solid #323232;
+            display: table;
+            margin: auto;
+            position: relative;
+            top: .25em;
         }
-    
-        #lightbox .next {
-            right: 0;
-            border-radius: 0 3px 3px 0;
+        .fourCards p {
+            text-align: center;
+            font-style: italic;
         }
-    
-        #lightbox img {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
+        .fourCards:hover {
+            transform: scale(1.025);
         }
-    
-        /* media queries */
-        @media (max-width: 1199px) {
-      
-            .gallery-title {
-                font-size: 50px;
+        @media screen and (max-width:450px) {
+            .fourCards {
+                flex: 0 1 85%;
             }
-          }
-        @media screen and (max-width: 700px){
-            .masonry-gallery {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            .fourCards h4 {
+                font-size: 15px;
             }
-            #lightbox .prev, #lightbox .next {
-                font-size: 18px;
-            }
-        }
-        @media screen and (max-width: 499px) {
-            .tab-container {
-                top: 4.3em;
-            }
-            .wrapper {
-                padding: 1em;
-            }
-            .gallery-title {
-                font-size: 40px;
+            .fourCards p {
+                font-size: 11px;
             }
         }
     </style>
-</head>
-
-<body>
-    <div id="header-placeholder"></div>
-    <div class="pageWrap">
-    <div class="tab-container">
-      <div class="tab selected" onclick="showModel(1)">Gallery 1</div>
-      <div class="tab" onclick="showModel(2)">Gallery 2</div>
-      <div class="tab" onclick="showModel(3)">Gallery 3</div>
-    </div>
     
-    <!-- first component (light mode) -->
-    <div id="wrapper1" class="contentWrapper">
-        <h1 class="gallery-title">Gallery 1</h1>
-      
-        <div class="wrapper">
-            <div class="masonry-gallery">
-                <!-- Images -->
-                <div class="gallery-item" data-index="0" onclick="openLightbox(this)">
-                    <img src="galleries/greece1.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="1" onclick="openLightbox(this)">
-                    <img src="galleries/greece2.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="2" onclick="openLightbox(this)">
-                    <img src="galleries/greece3.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="3" onclick="openLightbox(this)">
-                    <img src="galleries/greece4.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="4" onclick="openLightbox(this)">
-                    <img src="galleries/greece5.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="5" onclick="openLightbox(this)">
-                    <img src="galleries/greece6.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="6" onclick="openLightbox(this)">
-                    <img src="galleries/greece7.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="7" onclick="openLightbox(this)">
-                    <img src="galleries/greece8.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="8" onclick="openLightbox(this)">
-                    <img src="galleries/greece10.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="9" onclick="openLightbox(this)">
-                    <img src="galleries/greece9.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="10" onclick="openLightbox(this)">
-                    <img src="galleries/greece11.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="11" onclick="openLightbox(this)">
-                    <img src="galleries/greece12.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="12" onclick="openLightbox(this)">
-                    <img src="galleries/greece13.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="13" onclick="openLightbox(this)">
-                    <img src="galleries/greece14.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="14" onclick="openLightbox(this)">
-                    <img src="galleries/greece15.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="15" onclick="openLightbox(this)">
-                    <img src="galleries/greece16.webp" alt="Image 1">
-                </div>
-            </div>
-        </div> <!-- wrapper -->
-    </div>
-    
-    <!-- second component (dark mode) -->
-    <div id="wrapper2" class="contentWrapper" style="display: none;">
-        <h1 class="gallery-title">Gallery 2</h1>
-      
-        <div class="wrapper">
-            <div class="masonry-gallery">
-                <!-- Images -->
-                <div class="gallery-item" data-index="0" onclick="openLightbox(this)">
-                    <img src="galleries/loft1.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="1" onclick="openLightbox(this)">
-                    <img src="galleries/loft2.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="2" onclick="openLightbox(this)">
-                    <img src="galleries/loft3.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="3" onclick="openLightbox(this)">
-                    <img src="galleries/loft4.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="4" onclick="openLightbox(this)">
-                    <img src="galleries/loft5.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="5" onclick="openLightbox(this)">
-                    <img src="galleries/loft6.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="6" onclick="openLightbox(this)">
-                    <img src="galleries/loft7.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="7" onclick="openLightbox(this)">
-                    <img src="galleries/loft8.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="8" onclick="openLightbox(this)">
-                    <img src="galleries/loft9.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="9" onclick="openLightbox(this)">
-                    <img src="galleries/loft10.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="10" onclick="openLightbox(this)">
-                    <img src="galleries/loft11.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="11" onclick="openLightbox(this)">
-                    <img src="galleries/loft12.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="12" onclick="openLightbox(this)">
-                    <img src="galleries/loft13.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="13" onclick="openLightbox(this)">
-                    <img src="galleries/loft14.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="14" onclick="openLightbox(this)">
-                    <img src="galleries/loft15.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="15" onclick="openLightbox(this)">
-                    <img src="galleries/loft16.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="16" onclick="openLightbox(this)">
-                    <img src="galleries/loft17.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="17" onclick="openLightbox(this)">
-                    <img src="galleries/loft18.webp" alt="Image 1">
-                </div>
-            </div>
-        </div> <!-- wrapper -->
-    </div>
-    
-    <!-- third component (light mode) -->
-    <div id="wrapper3" class="contentWrapper" style="display: none;">
-        <h1 class="gallery-title">Gallery 3</h1>
-      
-        <div class="wrapper">
-            <div class="masonry-gallery">
-                <!-- Images -->
-                <div class="gallery-item" data-index="0" onclick="openLightbox(this)">
-                    <img src="galleries/photo-studio1.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="1" onclick="openLightbox(this)">
-                    <img src="galleries/photo-studio2.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="2" onclick="openLightbox(this)">
-                    <img src="galleries/photo-studio3.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="3" onclick="openLightbox(this)">
-                    <img src="galleries/photo-studio4.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="4" onclick="openLightbox(this)">
-                    <img src="galleries/photo-studio5.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="5" onclick="openLightbox(this)">
-                    <img src="galleries/photo-studio6.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="6" onclick="openLightbox(this)">
-                    <img src="galleries/photo-studio7.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="7" onclick="openLightbox(this)">
-                    <img src="galleries/photo-studio8.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="8" onclick="openLightbox(this)">
-                    <img src="galleries/photo-studio9.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="9" onclick="openLightbox(this)">
-                    <img src="galleries/photo-studio10.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="10" onclick="openLightbox(this)">
-                    <img src="galleries/photo-studio11.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="11" onclick="openLightbox(this)">
-                    <img src="galleries/photo-studio12.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="12" onclick="openLightbox(this)">
-                    <img src="galleries/photo-studio13.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="13" onclick="openLightbox(this)">
-                    <img src="galleries/photo-studio14.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="14" onclick="openLightbox(this)">
-                    <img src="galleries/photo-studio15.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="15" onclick="openLightbox(this)">
-                    <img src="galleries/photo-studio16.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="16" onclick="openLightbox(this)">
-                    <img src="galleries/photo-studio17.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="17" onclick="openLightbox(this)">
-                    <img src="galleries/photo-studio18.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="18" onclick="openLightbox(this)">
-                    <img src="galleries/photo-studio19.webp" alt="Image 1">
-                </div>
-                <div class="gallery-item" data-index="19" onclick="openLightbox(this)">
-                    <img src="galleries/photo-studio20.webp" alt="Image 1">
-                </div>
-            </div>
-        </div> <!-- wrapper -->
-    </div>
-    
-    <div id="lightbox" style="display:none;">
-        <span class="close" onclick="closeLightbox()">&times;</span>
-        <span class="prev" onclick="changeImage(-1)">&#10094;</span>
-        <span class="next" onclick="changeImage(1)">&#10095;</span>
-        <img id="lightbox-img">
-    </div>
-    
-    <script>
-        let currentImageIndex = 0;
-        let currentGalleryImages = [];
-        const lightboxImage = document.getElementById('lightbox-img');
-        const lightbox = document.getElementById('lightbox');
-        let activeGallery = 'wrapper1'; 
-    
+    <div id="hp4">
         
-        function showModel(modelNumber) {
-            
-            for (let i = 1; i <= 3; i++) {
-                const wrapper = document.getElementById('wrapper' + i);
-                wrapper.style.display = 'none';
-                wrapper.classList.remove('fadeIn');
-                document.querySelectorAll('.tab')[i-1].classList.remove('selected');
-            }
+        <div class="pageCont">
+            <h1>Portfolio</h1>
     
-            
-            const selectedWrapper = document.getElementById('wrapper' + modelNumber);
-            selectedWrapper.style.display = 'block';
-            selectedWrapper.classList.add('fadeIn');
-            document.querySelectorAll('.tab')[modelNumber - 1].classList.add('selected');
-    
-            
-            activeGallery = 'wrapper' + modelNumber;
-            currentGalleryImages = Array.from(document.querySelectorAll('#' + activeGallery + ' .masonry-gallery .gallery-item img'));
-        }
-    
-        function openLightbox(clickedElement) {
-            const index = parseInt(clickedElement.getAttribute('data-index'));
-            currentImageIndex = index;
-            lightboxImage.src = currentGalleryImages[index].src;
-            lightbox.style.display = 'flex';
-        }
-    
-        function changeImage(step) {
-            currentImageIndex += step;
-            if (currentImageIndex >= currentGalleryImages.length) {
-                currentImageIndex = 0; 
-            } else if (currentImageIndex < 0) {
-                currentImageIndex = currentGalleryImages.length - 1; 
-            }
-            lightboxImage.src = currentGalleryImages[currentImageIndex].src;
-        }
-    
-        function closeLightbox() {
-            lightbox.style.display = 'none';
-        }
-       
-        document.addEventListener('keydown', function(event) {
-            if (lightbox.style.display === 'flex') {
-                if (event.key === 'ArrowRight') {
-                    changeImage(1);
-                } else if (event.key === 'ArrowLeft') {
-                    changeImage(-1);
-                } else if (event.key === 'Escape') {
-                    closeLightbox();
-                }
-            }
-        });
+            <div class="fourCardsCont">
+                <a href="greek-villa.html" class="fourCards">
+                    <img src="images/project1.webp" alt="featured project image" />
+                    <h4>
+                        Greek Villa
+                    </h4>
+                    <p>
+                        Full Home Makeover
+                    </p>
+                </a><!-- fourCards -->
+                <a href="chicago-loft.html" class="fourCards">
+                    <img src="images/project2.webp" alt="featured project image" />
+                    <h4>
+                        Chicago Loft
+                    </h4>
+                    <p>
+                        Full Home Makeover
+                    </p>
+                </a><!-- fourCards -->
+                <a href="jones-home.html" class="fourCards">
+                    <img src="images/project3.webp" alt="featured project image" />
+                    <h4>
+                        Jones Home
+                    </h4>
+                    <p>
+                        Full Home Makeover
+                    </p>
+                </a><!-- fourCards -->
+                <a href="photo-studio.html" class="fourCards">
+                    <img src="images/project4a.webp" alt="featured project image" />
+                    <h4>
+                        Photo Studio
+                    </h4>
+                    <p>
+                        Commercial Space Design
+                    </p>
+                </a><!-- fourCards -->
+            </div><!-- fourCardsCont -->
+        </div> <!-- pageCont -->
         
-        showModel(1);
-        let touchStartX = 0;
-        let touchEndX = 0;
-    
-        function handleTouchStart(event) {
-            touchStartX = event.touches[0].clientX;
-        }
-    
-        function handleTouchMove(event) {
-            touchEndX = event.touches[0].clientX;
-        }
-    
-        function handleTouchEnd() {
-            if (touchEndX < touchStartX) {
-                changeImage(1); 
-            }
-            if (touchEndX > touchStartX) {
-                changeImage(-1); 
-            }
-        }
-    
-        // Add the event listeners
-        lightbox.addEventListener('touchstart', handleTouchStart, false);
-        lightbox.addEventListener('touchmove', handleTouchMove, false);
-        lightbox.addEventListener('touchend', handleTouchEnd, false);
-    </script>
-    </div> <!-- pageWrap -->
+    </div> <!-- hp4 -->
+        
     <div id="footer-placeholder"></div>
     <script src="scripts.js"></script>
 </body>
