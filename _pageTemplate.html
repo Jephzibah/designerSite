@@ -13,28 +13,31 @@
     If you're unfamiliar, just copy this code, create a new file in your home directory, which is the same 
     folder that this file is located in, name it "myNewPage.html" or whatever you like, paste in the template 
     code & edit without worrying about losing your base template code.
+
+    There is some vestigial photographer's verbiage from a previous template that I created, I just got lazy & 
+    left that in place, since this page is meant to be edited anyway & is not part of the demo.
  -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photographer's Template</title>
-    <meta name="description" content="A professional photography template showcasing high-quality images and photography services.">
-    <meta name="keywords" content="photography, professional photography, portfolio, image gallery">
+    <title>Designer's Template</title>
+    <meta name="description" content="A professional designer template showcasing high-quality images and designer services.">
+    <meta name="keywords" content="designer, professional designer, portfolio, image gallery">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="PAGE_URL">
-    <meta property="og:title" content="Photographer's Template">
-    <meta property="og:description" content="A professional photography template showcasing high-quality images and photography services.">
+    <meta property="og:title" content="Designer's Template">
+    <meta property="og:description" content="A professional designer template showcasing high-quality images and designer services.">
     <meta property="og:image" content="URL_TO_IMAGE">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="PAGE_URL">
-    <meta name="twitter:title" content="Photographer's Template">
-    <meta name="twitter:description" content="A professional photography template showcasing high-quality images and photography services.">
+    <meta name="twitter:title" content="Designer's Template">
+    <meta name="twitter:description" content="A professional designer template showcasing high-quality images and designer services.">
     <meta name="twitter:image" content="URL_TO_IMAGE">
     <meta name="twitter:site" content="@YourTwitterHandle">
     
@@ -56,72 +59,30 @@
         If you want completely new content remove everything between here and "end here"
      -->
 
-    <!-- begin slider -->
-    <div class="slider">
-        <!-- Begin Welcome Message 
-        If you prefer not to use this, simply remove or comment out this code
-        -->
-        <div id="atfWelcome">
-            <h1>
-                Smallville Photography
-            </h1>
-        </div>
-        <!-- End Welcome Message -->
-
-        <!-- Slides are defined here - I highly recommend optimizing them for web use first, 
-            either as very lightweight JPG files or WEBP format. 
-            If you don't want to use the slider, just remove everything between "begin slider" & "end slider"
-        -->
-        <div class="slides">
-            <div class="slide current"><img src="images/slide2.webp" alt="Image 2"></div>
-            <div class="slide"><img src="images/slide3.webp" alt="Image 3"></div>
-            <div class="slide"><img src="images/slide4.webp" alt="Image 4"></div>
-            <div class="slide"><img src="images/slide5.webp" alt="Image 5"></div>
-            <div class="slide"><img src="images/slide6.webp" alt="Image 6"></div>
-            <div class="slide"><img src="images/slide8.webp" alt="Image 8"></div>
-            <div class="slide"><img src="images/slide9.webp" alt="Image 9"></div>
-            <div class="slide"><img src="images/slide10.webp" alt="Image 10"></div>
-            <div class="slide"><img src="images/slide11.webp" alt="Image 11"></div>
-            <div class="slide"><img src="images/slide12.webp" alt="Image 12"></div>
-            <div class="slide"><img src="images/slide13.webp" alt="Image 13"></div>
-            <div class="slide"><img src="images/slide14.webp" alt="Image 14"></div>
-            <!-- Add more slides as needed -->
-        </div>
-        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-        <a class="next" onclick="changeSlide(1)">&#10095;</a>
-        <div class="dots"></div>
-    </div> 
-    <!-- end slider -->
-    
-    <!-- Optional tickertape - remove if you don't want to use it -->
-    <div id="tickerTapeContainer">
-        <p class="tickerTapeText">Now booking graduation sessions!</p>
-    </div>
-
     <div class="services">
         <div id="serviceHeader">
-            <h2>Services</h2>
+            <h3 style="font-size:45px;">Services</h3>
         </div>
         <div id="serviceImages">
-            <img src="images/service1.webp" alt="Photography Services" />
-            <img src="images/service2.webp" alt="Photography Services" />
+            <img src="images/service1.webp" alt="designer Services" />
+            <img src="images/service2.webp" alt="designer Services" />
         </div>
         <div id="serviceTable">
             <h3>FAQ</h3>
             <div class="accordionWrapper">
     
                 <div class="accordionItem close">
-                  <h4 class="accordionItemHeading">What kind of photography do you offer?</h4>
+                  <h4 class="accordionItemHeading">What kind of services do you offer?</h4>
                   <div class="accordionItemContent">
                     <div>
                         <p>I specialize in:</p>
                         <ul>
                             <li>Family Portraits</li>
-                            <li><strong>Studio Photography</strong></li>
+                            <li><strong>Studio designer</strong></li>
                             <li>Graduation</li>
                             <li>Fashion/Modeling</li>
                             <li>Commercial</li>
-                            <li>Event Photography</li>
+                            <li>Event designer</li>
                         </ul>
                     </div>
                   </div>
@@ -131,10 +92,10 @@
                     then edit the content as needed for your site
                  -->
                 <div class="accordionItem close">
-                  <h4 class="accordionItemHeading">Do you provide videography services?</h4>
+                  <h4 class="accordionItemHeading">Do you provide consulting services?</h4>
                   <div class="accordionItemContent">
                     <div>
-                        <p>Of course - I'm more than happy to talk about your video production project with you!</p>
+                        <p>Of course - I'm more than happy to talk about your project with you!</p>
                     </div>
                   </div>
                 </div>
@@ -155,7 +116,7 @@
     </div> <!-- services -->
     <div class="serviceBox">
         <div>
-            <a href="#"><img src="images/graduation.webp" alt="Graduation Photography Services" /></a>
+            <a href="#"><img src="images/graduation.webp" alt="Graduation designer Services" /></a>
         </div>
         <div>
             <a href="#"><h3>
@@ -165,7 +126,7 @@
     </div> <!-- serviceBox -->
     <div class="serviceBox serviceBoxFlip">
         <div>
-            <a href="#"><img src="images/slide1.webp" alt="Family portraiture" /></a>
+            <a href="#"><img src="images/familyPhotos.webp" alt="Family portraiture" /></a>
         </div>
         <div>
             <a href="#"><h3>
@@ -175,7 +136,7 @@
     </div> <!-- serviceBox -->
     <div class="serviceBox">
         <div>
-            <a href="#"><img src="images/slide7.webp" alt="Personal Portraiture Services" /></a>
+            <a href="#"><img src="images/eventPhotography.webp" alt="Personal Portraiture Services" /></a>
         </div>
         <div>
             <a href="#"><h3>
@@ -185,19 +146,19 @@
     </div> <!-- serviceBox -->
     <div class="serviceBox serviceBoxFlip">
         <div>
-            <a href="#"><img src="images/eventPhoto.webp" alt="Event Photography Services" /></a>
+            <a href="#"><img src="images/eventPhoto.webp" alt="Event designer Services" /></a>
         </div>
         <div>
             <a href="#"><h3>
-                Event Photography
+                Event designer
             </h3></a>
         </div>
     </div> <!-- serviceBox -->
 
     <div id="aboutMe">
         <div>
-            <p>I’m a professional phorographer & videographer providing family & business photography services to the Savannah, GA & surrounding areas. I can easily provide photography & videography for Pooler, Richmond Hill, Tybee Island, and surrounding areas.</p>
-            <p>Capture the essence of life's moments with a unique and professional photography service. Make sure those beautiful moments in life stay with you for days to come. Whether you're commemorating a special occasion, celebrating love, or seeking to showcase your unique personality, I'm dedicated to crafting visually stunning and emotionally resonant pictures. From portrait sessions to full wedding videography, my services cater to your every photographic need. With each photo, I strive to capture the beauty of life's little moments.</p>
+            <p>I’m a professional designer & videographer providing family & business designer services to the Savannah, GA & surrounding areas. I can easily provide designer & videography for Pooler, Richmond Hill, Tybee Island, and surrounding areas.</p>
+            <p>Capture the essence of life's moments with a unique and professional designer service. Make sure those beautiful moments in life stay with you for days to come. Whether you're commemorating a special occasion, celebrating love, or seeking to showcase your unique personality, I'm dedicated to crafting visually stunning and emotionally resonant pictures. From portrait sessions to full wedding videography, my services cater to your every photographic need. With each photo, I strive to capture the beauty of life's little moments.</p>
             <a class="ctaBtn" href="#">Explore My Portfolio</a>
         </div>
     </div>
@@ -212,7 +173,7 @@
         -->
           <div class="testimonial-item">
             <p>
-                "No one quite takes pictures like Mary. She will be my first and favorite photographer for any shoot I'm a part of."
+                "No one quite takes pictures like Mary. She will be my first and favorite Designer for any shoot I'm a part of."
                 <br />
                 <span>George</span>
             </p>
@@ -253,7 +214,7 @@
                         Planning
                     </h3>
                     <p>
-                        During the planning stage, we'll talk about what you're looking for in your photography or videography. I'll ask questions about the session type, the location, number of people, and timeframe requirements. Think of this as the "getting to know each other" stage.
+                        During the planning stage, we'll talk about what you're looking for in your designer or videography. I'll ask questions about the session type, the location, number of people, and timeframe requirements. Think of this as the "getting to know each other" stage.
                     </p>
                 </div>
             </div> <!-- processItem -->
@@ -279,7 +240,7 @@
                         Preparation
                     </h3>
                     <p>
-                        Depending on the type of photography service, we will provide any needed guidance on preparation, outfit choices, and any other minor details. This ensures that you feel confident and ready to make the most of your photo session.
+                        Depending on the type of designer service, we will provide any needed guidance on preparation, outfit choices, and any other minor details. This ensures that you feel confident and ready to make the most of your photo session.
                     </p>
                 </div>
             </div> <!-- processItem -->

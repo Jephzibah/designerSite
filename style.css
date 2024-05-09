@@ -160,8 +160,8 @@ p {
 button {
 	background-color: var(--color-4);
 	font-family: var(--light-font);
-	font-size: 14px;
-	padding: 7px 15px;
+	font-size: 18px;
+	padding: 12px 30px;
 	color: var(--text-color);
 	transition: 250ms ease;
 	border: none;
@@ -1127,7 +1127,6 @@ header {
 	  aspect-ratio: 1920/720;
 	}
 	#aboutMe p {
-		color: var(--body-background);
         letter-spacing: .5px;
         line-height: 1.5;
 		font-family: var(--light-font);
