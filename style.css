@@ -685,7 +685,7 @@ header {
 }
 @media screen and (max-width:921px){
 	#headerBannerCont {
-		top: 2em;
+		top: 110px;
 	}
 	#hp2 {
 	  padding-top: 60vw;
@@ -737,7 +737,7 @@ header {
 		aspect-ratio: 11/9;
 	}
 	#hp2 {
-	   padding-top: 75vw;
+	   padding-top: 82vw;
 	}
 /*		Might need to uncomment this if the p text becomes lengthy
 	#headerBannerText p {
@@ -1293,6 +1293,21 @@ header {
 		}
 	}
 	@media screen and (max-width:767px) {
+		header {
+			padding: 0 20px 20px;
+		}
+		header h2 {
+			font-size: 20px;
+			line-height: 1.25;
+			letter-spacing: 5px;
+		}
+		#middleSpan{
+			display: block;
+			letter-spacing: 6px;
+		}
+		#bottomSpan {
+			letter-spacing: 7px;
+		}
 		.services {
 			flex-wrap: wrap;
 		}
