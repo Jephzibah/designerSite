@@ -221,18 +221,13 @@ var slider = document.querySelector('.headerBanner .bgImage');
 if (slider) {
 // Slider nav dots
 var images = [
-    'images/mag_design_port01.webp',
-    'images/mag_design_port02.webp',
-    'images/mag_design_port03.webp',
-    'images/mag_design_port05.webp',
-    'images/mag_design_port06.webp',
-    'images/mag_design_port07.webp',
-    'images/mag_design_port08.webp',
-    'images/mag_design_port09.webp',
-    'images/mag_design_port10.webp',
-    'images/mag_design_port11.webp',
-    'images/mag_design_port12.webp',
-    'images/mag_design_port13.webp',
+    'images/homepageBanner1.webp',
+    'images/homepageBanner2.webp',
+    'images/homepageBanner3.webp',
+    'images/homepageBanner4.webp',
+    'images/homepageBanner5.webp',
+    'images/homepageBanner6.webp',
+    'images/homepageBanner7.webp',
     // Add more image URLs
 ];
 var currentIndex = 0;
