@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    $recipient = "autumnlanewebmaster@gmail.com"; // SET YOUR EMAIL ADDRESS HERE
+    $recipient = "contact@csralawncare.com"; // SET YOUR EMAIL ADDRESS HERE
     $subject = "New contact from $name";
 
     // Email content

@@ -1412,8 +1412,11 @@ footer {
     color: var(--body-background);
     text-align: center;
     padding: 20px 0;
+	position: relative;
 }
-
+#byline {
+	font-size: 12px;
+}
 .footer-content {
     margin-bottom: 20px;
 }
