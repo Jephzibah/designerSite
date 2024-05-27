@@ -734,7 +734,7 @@ header {
 }
 @media screen and (max-width: 600px) {
 	.headerBanner {
-		aspect-ratio: 11/9;
+		aspect-ratio: 12/9;
 	}
 	#hp2 {
 	   padding-top: 82vw;
@@ -1294,7 +1294,7 @@ header {
 	}
 	@media screen and (max-width:767px) {
 		header {
-			padding: 0 20px 20px;
+			padding: 10px 20px 20px;
 		}
 		header h2 {
 			font-size: 20px;
