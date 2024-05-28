@@ -54,7 +54,7 @@
             max-width: 1500px;
             margin: auto;
         }
-        .aboutHeader:nth-of-type(2) {
+        .flip {
             flex-direction: row-reverse;
         }
         .aboutHeader>div {
@@ -63,11 +63,23 @@
             padding: 25px;
         }
         .aboutHeader img {
-            width: 500px;
-            height: auto;
             max-width: 100%;
             display: block;
             margin: auto;
+            box-shadow: 0 0 5px #000;
+        }
+        .flip img {
+            width: 500px;
+            height: 600px;
+            object-fit: cover;
+            max-width: 100%;
+            display: block;
+            margin: auto;
+        }
+        #lastAbout {
+            width: 500px;
+            height: auto;
+            max-width: 100%;
         }
         .aboutHeader button {
             display: block;
@@ -93,7 +105,7 @@
     </style>
     <div class="aboutHeader">
             <div>
-                <img src="images/aboutMe.jpg" alt="about us" />
+                <img src="images/WestlakeHouse.jpg" alt="about us" />
             </div>
             <div>
                 <h3>
@@ -103,17 +115,53 @@
                     About CSRA Lawn Care
                 </h2>
             <p>
-                Hi there, my name is Jeff & I started CSRA Lawn Care after our kids moved out in 2024 & we returned to the Augusta area. I am a USAF vet & former defense employee with extensive lawn & landscape experience. I have owned & operated multiple successful landscape companies & have a genuine love of making your spaces look their best & helping protect your investment. It's my philosophy that every property I touch should be treated with the same care & attention that I give to my own. 
+                CSRA Lawn Care is a detail-oriented residential landscape management service. Areas served include Augusta Richmond County & Columbia County as well as Aiken County, SC.
             </p>
             <p>
-                We offer service visits from just $65, reach out for more information.
+                Core services are:
             </p>
-                <a href="contact.html"><button>Contact Me</button></a>
+            <ul>
+                <li>
+                    Regular mowing & cleanup
+                </li>
+                <li>
+                    Leaf & pine straw cleanup
+                </li>
+                <li>
+                    Shrub maintenance, including weed control
+                </li>
+                <li>
+                    Small tree care
+                </li>
+                <li>
+                    Lawn feeding & weed control
+                </li>
+                <li>
+                    Irrigation services
+                </li>
+                <li>
+                    Property cleanup
+                </li>
+            </ul>
+            <p>
+                All service customers are on a weekly schedule unless more visits are required during specific activities.
+            </p>
+                <a href="contact.html"><button>Check Availability</button></a>
             </div>
+    </div> <!-- aboutHeader -->
+    <div class="aboutHeader flip">
+        <div>
+            <img src="images/aboutMe.jpg" alt="about us" />
+        </div>
+        <div>
+            <p>
+                Hi there, my name is Jeff & I started CSRA Lawn Care after our kids moved out in 2024 & we returned to the Augusta area. I am a USAF vet & former defense employee with extensive lawn & landscape experience. I have owned & operated multiple successful landscape companies & have a genuine love of making your spaces look their best & helping protect your investment. It's my philosophy that every property I touch should be treated with the same care & attention that I give to my own. 
+            </p>
+        </div>
     </div> <!-- aboutHeader -->
     <div class="aboutHeader">
         <div>
-            <img src="images/about2.webp" alt="about us" />
+            <img id="lastAbout" src="images/about2.webp" alt="about us" />
         </div> <!-- moeServices -->
         <div>
             <h2>
