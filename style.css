@@ -5,12 +5,12 @@
 		changing these root colors & fonts to your brand's palette & typography
 	 */
 	--body-background: #fff;
-	--accent-color: #7f8c59;
-	--color-1: #e1eade;
-	--color-2: #d0dde5;
-	--color-3: #f7f6f2;
-	--color-4: #b3c3cc;
-	--color-5: #f1f0ec;
+	--accent-color: #f58f20;
+	--color-1: #609DB3;
+	--color-2: #46C5F2;
+	--color-3: #9D8162;
+	--color-4: #5B6C73;
+	--color-5: #48433D;
 	--color-6: 241, 240, 236; /* this is an rgb of color-5 & is used in the accordion */
 	--translucent1: rgba(255,255,255,.5);
 	--translucent2: rgba(0,0,0,.5);
@@ -132,7 +132,7 @@ body, html {
 a {
 	cursor: pointer;
 	text-decoration: none;
-	color: var(--text-color2);
+	color: var(--accent-color);
 }
 h1,h2 {
 	font-family: var(--header-font);
@@ -162,7 +162,7 @@ button {
 	font-family: var(--light-font);
 	font-size: 18px;
 	padding: 12px 30px;
-	color: var(--text-color);
+	color: var(--body-background);
 	transition: 250ms ease;
 	border: none;
 	border-radius: 3px;
@@ -170,15 +170,21 @@ button {
 	display: table;
 	text-decoration: none;
 }
+button a {
+	color: var(--body-background);
+}
 @media screen and (min-width: 1025px) {
 	.ctaBtn:hover,
 	button:hover {
-		background-color: var(--text-color);
-		color: var(--color-4);
+		background-color: var(--color-3);
+		/* color: var(--color-4); */
 	}
 	.ctaBtn:hover a,
 	button:hover a {
-		color: var(--color-4);
+		color: var(--body-background);
+	}
+	button a:hover {
+		color: var(--body-background);
 	}
 }
 /* Header */
@@ -520,7 +526,8 @@ header {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
-	background-color: var(--color-3);
+	background-color: var(--color-5);
+	color: var(--body-background);
 	justify-content: space-between;
 }
 .homepageServiceBox:nth-of-type(2) {
@@ -1408,7 +1415,7 @@ header {
 }
 /* Footer */
 footer {
-    background-color: var(--text-color);
+    background-color: var(--color-3);
     color: var(--body-background);
     text-align: center;
     padding: 20px 0;
