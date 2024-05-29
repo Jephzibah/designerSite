@@ -1,124 +1,139 @@
 <style>
-    input.error, textarea.error {
-       border: 2px solid red;
-   }
-   form {
-       display: flex;
-       gap: 15px;
-       flex-wrap: wrap;
-       align-items: center;
-       justify-content: center;
-       width: 750px;
-       max-width: 100vw;
-       margin: auto;
-   }
-   form input {
-       border-radius: 3px;
-       padding: 5px;
-   }
-   form > div {
-       flex: 0 1 49%;
-       display: flex;
-       flex-direction: column;
-       margin: 5px auto;
-   }
-   form > div:last-of-type {
-       flex: 0 1 100%;
-   }
-   form button {
-       cursor: pointer;
-       flex: 0 1 90%;
-       padding: 15px;
-       border-radius: 3px;
-   }
-   #formSubmissionMessage {
-       display: table;
-       margin: 15px auto;
-       font-size: 20px;
-   }
-   @media screen and (max-width: 767px) {
-       form {
-           flex-direction: column;
-       }
-       form > div {
-           flex: 0 1 100%;
-           width: 90%;
-           margin: 0 auto;
-       }
-       form button {
-           width: 75%;
-       }
-   }
-   </style>
-   <!-- 
-       To use this form, embed the following element wherever you want
-       <div id="contactFormContainer"></div> 
-   -->
-   <form id="contactForm" action="/api/submit-form" method="POST">
-       <div>
-           <label for="name">Name:</label>
-           <input type="text" id="name" name="name" required>
-       </div>
-   
-       <div>
-           <label for="email">Email:</label>
-           <input type="email" id="email" name="email" required>
-       </div>
-   
-       <div>
-           <label for="phone">Phone Number:</label>
-           <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}" placeholder="123-456-7890" required>
-       </div>
-   
-       <div>
-           <label for="shortText">Subject:</label>
-           <input type="text" id="shortText" name="shortText" required>
-       </div>
-   
-       <div>
-           <label for="longText">How can I help?</label>
-           <textarea id="longText" name="longText" rows="4" required></textarea>
-       </div>
-   
-       <button type="submit">Send</button>
-   </form>
-   <div id="formSubmissionMessage"></div>
+ input.error, textarea.error {
+    border: 2px solid red;
+}
+form {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 750px;
+    max-width: 100vw;
+    margin: auto;
+}
+form input {
+    border-radius: 3px;
+    padding: 5px;
+}
+form > div {
+    flex: 0 1 49%;
+    display: flex;
+    flex-direction: column;
+    margin: 5px auto;
+}
+form > div:last-of-type {
+    flex: 0 1 100%;
+}
+form button {
+    cursor: pointer;
+    flex: 0 1 90%;
+    padding: 15px;
+    border-radius: 3px;
+}
+#formSubmissionMessage {
+    display: table;
+    margin: 15px auto;
+    font-size: 20px;
+}
+@media screen and (max-width: 767px) {
+    form {
+        flex-direction: column;
+    }
+    form > div {
+        flex: 0 1 100%;
+        width: 90%;
+        margin: 0 auto;
+    }
+    form button {
+        width: 75%;
+    }
+}
+</style>
+<!-- 
+    To use this form, embed the following element wherever you want
+    <div id="contactFormContainer"></div> 
+-->
+<div id="contactReplacement">
+    <h2>
+        To contact us, please send an email to <a href="mailto:contact@csralawncare.com">contact@csralawncare.com</a> or call <a href="tel:7068331464">706-833-1464</a>.
+    </h2>
+</div>
+<!-- <form id="contactForm" action="submit-form.php" method="POST">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+
+    <div>
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}" placeholder="123-456-7890" required>
+    </div>
+
+    <div>
+        <label for="shortText">Subject:</label>
+        <input type="text" id="shortText" name="shortText" required>
+    </div>
+
+    <div>
+        <label for="longText">How can I help?</label>
+        <textarea id="longText" name="longText" rows="4" required></textarea>
+    </div>
+
+    <button type="submit">Send</button>
+</form> -->
+<div id="formSubmissionMessage"></div>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-    var form = document.getElementById('contactForm');
-    var formMessage = document.getElementById('formSubmissionMessage');
-
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the default form submission
-
-        if (form.checkValidity()) {
-            var formData = new FormData(form);
-
-            fetch('/api/submit-form', {
-                method: 'POST',
-                body: formData,
-            })
-            .then(response => response.json())
-            .then(data => {
-                formMessage.textContent = data.message || "Form submitted successfully!";
-                formMessage.style.color = 'green'; // Optional: Style the message
-                form.reset(); // Optional: Reset form after successful submission
-            })
-            .catch((error) => {
-                formMessage.textContent = "Oops! Something went wrong, please try again.";
-                formMessage.style.color = 'red';
-            });
-        } else {
-            form.reportValidity(); // Trigger form validation feedback
-        }
-    });
-
-    form.addEventListener('input', (event) => {
-        if (!event.target.validity.valid) {
-            event.target.classList.add('error');
-        } else {
-            event.target.classList.remove('error');
-        }
-    });
+    // we need to validate our fields in real time for the user
+    document.getElementById('contactForm').addEventListener('input', (event) => {
+    if (!event.target.validity.valid) {
+        event.target.classList.add('error');
+    } else {
+        event.target.classList.remove('error');
+    }
 });
-</script>   
+
+document.addEventListener('DOMContentLoaded', function() {
+        var form = document.getElementById('contactForm');
+        var formMessage = document.getElementById('formSubmissionMessage');
+    
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+    
+            if (form.checkValidity()) {
+                var formData = new FormData(form);
+    
+                fetch('submit-form.php', {
+                    method: 'POST',
+                    body: formData,
+                })
+                .then(response => response.text())
+                .then(data => {
+                    formMessage.textContent = data; // Display submission result message
+                    formMessage.style.color = 'green'; // Optional: Style the message
+                    form.reset(); // Optional: Reset form after successful submission
+                })
+                .catch((error) => {
+                    formMessage.textContent = "Oops! Something went wrong, please try again.";
+                    formMessage.style.color = 'red';
+                });
+            } else {
+                form.reportValidity(); // Trigger form validation feedback
+            }
+        });
+    
+        form.addEventListener('input', (event) => {
+            if (!event.target.validity.valid) {
+                event.target.classList.add('error');
+            } else {
+                event.target.classList.remove('error');
+            }
+        });
+    });
+    </script>
+    
