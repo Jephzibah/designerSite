@@ -620,6 +620,27 @@ header {
 	position: relative;
 	top: 1em;
 }
+.twoCards {
+	display: flex;
+	gap: 25px;
+	margin: 25px auto;
+	align-items: center;
+	max-width: 95%;
+}
+.twoCards>div {
+	flex: 1 1 45%;
+}
+.twoCards img {
+	box-shadow: 3px 3px 5px #323232;
+}
+.flip {
+	flex-direction: row-reverse;
+}
+@media screen and (max-width: 925px) {
+	.twoCards, .flip {
+		flex-direction: column;
+	}
+}
 .fourCardsCont {
 	display: flex;
 	flex-wrap: wrap;
