@@ -683,9 +683,9 @@ header {
 	  padding-top: 60vw;
 	}
 }
-@media screen and (max-width:921px){
+@media screen and (max-width:767px){
 	#headerBannerCont {
-		top: 2em;
+		top: 7em;
 	}
 	#hp2 {
 	  padding-top: 60vw;
@@ -734,7 +734,7 @@ header {
 }
 @media screen and (max-width: 600px) {
 	.headerBanner {
-		aspect-ratio: 11/9;
+		aspect-ratio: 12/9;
 	}
 	#hp2 {
 	   padding-top: 75vw;
