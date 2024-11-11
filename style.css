@@ -517,6 +517,37 @@ header {
 	position: relative;
 	padding-top: 35vw;
 }
+#homepageUpdate {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: start;
+	border-radius: 7px;
+	border: 1px solid var(--accent-color);
+}
+#homepageUpdateAnnouncement {
+	width: 100%;
+	h3 {
+		width: 100%;
+		margin-top: 0;
+		padding: 25px 0;
+		font-family: var(--bold-font);
+		background-color: var(--accent-color);
+		color: #fff;
+		font-size: 2em;
+		text-align: center;
+	}
+}
+#homepageUpdateInfo {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	div {
+		flex: 1 500px;
+		max-width: 100%;
+		padding: 10px;
+	}
+}
 #homepageServices {
 	display: flex;
 	flex-wrap: wrap;
@@ -955,9 +986,19 @@ header {
 		justify-content: center;
 		align-items: center;
 		aspect-ratio: 1920/1000;
-		background-color:var(--color-3);
+		/* background-color:var(--color-3); */
+		background: url(/images/servicesBackground.jpg) center/cover no-repeat;
 		position: relative;
 		z-index: 1;
+	}
+	.services:before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		background-color: rgba(255,255,255,.8);
 	}
 	.services>div:nth-of-type(1) {
 		flex-basis: 10%;
@@ -973,8 +1014,10 @@ header {
         font-family: var(--header-font);
 		color: var(--text-color);
 		font-size: 11vw;
-	
     }
+	#serviceTable {
+		position: relative;
+	}
     #serviceTable h3 {
         font-family: var(--header-font);
         font-size: 25px;
@@ -989,12 +1032,13 @@ header {
 		max-width: 95%;
 	}
 	#serviceImages img:nth-of-type(1) {
+		z-index: 9;
 		top: 5%;
 		left: -3em;
-		width: 25vw;
+		width: 90%;
 	}
 	#serviceImages img:nth-of-type(2) {
-		width: 15vw;
+		width: 70%;
 		position: absolute;
 		bottom: 0;
 		right: 0;
@@ -1105,13 +1149,14 @@ header {
 	.serviceBox>div {
 		flex: 0 1 50%;
 		display: flex;
+		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 	}
 	.serviceBox h3 {
 		position: relative;
 		line-height: 2;
-		color: var(--text-color);
+		color: var(--body-background);
 		transition: 250ms ease;
 	}
 	.serviceBox h3:after {
@@ -1122,8 +1167,12 @@ header {
 		transform: translate(-50%, 0);
 		width: 75px;
 		height: .02em;
-		background-color: var(--text-color);
+		background-color: var(--body-background);
 		transition: 500ms ease;
+	}
+	.serviceBox p {
+		color: var(--body-background);
+		max-width: 95%;
 	}
 	.serviceBox img {
 		transition: 250ms ease;
@@ -1142,6 +1191,42 @@ header {
 		width: 90%;
 		height: 2px;
 	}
+	}
+	@media screen and (max-width: 767px) {
+		.serviceBox > div {
+			flex: 1 100%;
+			aspect-ratio: 1;
+		}
+		.serviceImgDiv {
+			display: none !important;
+		}
+		.serviceTextDiv {
+			position: relative;
+			p {
+				position: relative;
+			}
+		}
+		.serviceTextDiv:before {
+			position: absolute;
+			content: '';
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			background-color: rgba(0,0,0,.5);
+		}
+		#serviceText1 {
+			background: url(images/servicesLawnCare.webp) center/cover no-repeat;
+		}
+		#serviceText2 {
+			background: url(images/servicesCleanups.webp) center/cover no-repeat;
+		}
+		#serviceText3 {
+			background: url(images/servicesIrrigation.webp) center/cover no-repeat;
+		}
+		#serviceText4 {
+			background: url(images/servicesLawnFeeding.webp) center/cover no-repeat;
+		}
 	}
 	#aboutMe {
 	  display: flex;
@@ -1351,10 +1436,10 @@ header {
 		#serviceImages img:nth-of-type(1) {
 		  top: 0%;
 		  left: 5%;
-		  width: 30vw;
+		  width: 80%;
 		}
 		#serviceImages img:nth-of-type(2) {
-		  width: 20vw;
+		  width: 45%;
 		  bottom: -6%;
 		  transform: translate(-20%, -25%);
 		}
@@ -1383,10 +1468,10 @@ header {
 		#serviceImages img:nth-of-type(1) {
 			top: 0%;
 			left: 5%;
-			width: 50vw;
+			width: 70%;
 		}
 		#serviceImages img:nth-of-type(2) {
-			width: 35vw;
+			/* width: 35vw; */
 			bottom: -6%;
 			right: 10%;
 		}
