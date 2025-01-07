@@ -214,6 +214,23 @@ header {
 		height: 75px;
 	}
 }
+.smb,
+.smb img {
+	width: 55px;
+	height: 55px;
+	border-radius: 100%;
+	@media screen and (max-width: 767px) {
+		width: 35px;
+		height: 35px;
+	}
+}
+.smb {
+	margin-left: auto;
+	@media screen and (max-width: 767px) {
+		margin-right: 15px;
+	}
+	border: 1px solid #323232;
+}
 @media screen and (min-width:768px) {
 	.mobile-nav {
 		display: none !important;
@@ -225,7 +242,7 @@ header {
     align-items: center;
     width: 100%;
 }
-#navbar * {
+#navbar a {
 	cursor: pointer;
 }
 .navbar-links {
@@ -743,9 +760,6 @@ header {
 	}
 }
 @media screen and (max-width:921px){
-	#headerBannerCont {
-		top: 95px;
-	}
 	#hp2 {
 	  padding-top: 60vw;
 	}
@@ -776,6 +790,11 @@ header {
 	}
 	.homepageServiceBox h3 {
 		font-size: 16px;
+	}
+}
+@media screen and (max-width: 767px) {
+	#headerBannerCont {
+		top: 95px;
 	}
 }
 @media screen and (max-width: 650px) {
