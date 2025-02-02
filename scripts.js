@@ -1,4 +1,114 @@
 // scripts.js
+// Homepage seasonal
+function displaySeasonalContent() {
+  const today = new Date();
+  const month = today.getMonth(); // 0 = January, 11 = December
+  let content = '';
+
+  if (month >= 1 && month <= 3) {
+    // Spring: February, March, April
+    content = `
+        <div class="twoCards">
+            <div>
+                <h3>
+                      Spring Cleanups & Overseeding
+                  </h3>
+                <p>
+                  Revive your landscape with a well-timed Spring cleaning & ensure you're ready for the Masters. We go beyond basic debris removal to expertly prune trees and shrubs, refresh garden beds, and revitalize your lawn’s appearance. Let us make you look good & free you to enjoy the finer things — knowing every inch of your landscape is impeccably cared for.
+                </p>
+                <p>
+                  Seeing a little decline after the Winter season? No problem, we can make it look great again with seeding, sodding, or planting show-ready plants in your landscape.
+                </p>
+                    <button><a href="tel:7068331464">
+                        Call Or Text Us
+                    </a></button>
+            </div>
+            <div>
+                <img src="images/spring-cleanup.jpg" alt="Fertilizer being spread on grass, CSRA LawnCare provides lawn & ornamental treatment services to Augusta, Hephzibah, Grovetown, Evans, & North Augusta" />
+            </div>
+        </div>
+    `;
+  } else if (month >= 4 && month <= 7) {
+    // Summer: May, June, July, August
+    content = `
+        <div class="twoCards">
+            <div>
+                <h3>
+                      Lawn Care & Landscape Maintenance
+                  </h3>
+                <p>
+                    Stay cool during the Summer months & let us handle things outside for you. Our expertise helps ensure that your turf doesn't get overstressed during the peak heat we see here in the CSRA to keep it looking its best.
+                </p>
+                <p>
+                    Don't forget, your plants need feeding, too, just like you do. It's important to maintain proper fertilization for your specific kind of grass.
+                </p>
+                    <button><a href="tel:7068331464">
+                        Call Or Text Us
+                    </a></button>
+            </div>
+            <div>
+                <img src="images/landscape-maintenance.jpg" alt="Fertilizer being spread on grass, CSRA LawnCare provides lawn & ornamental treatment services to Augusta, Hephzibah, Grovetown, Evans, & North Augusta" />
+            </div>
+        </div>
+    `;
+  } else if (month >= 8 && month <= 10) {
+    // Fall: September, October, November
+    content = `
+        <div class="twoCards">
+            <div>
+                <h3>
+                      Leaf Cleanups & Overseeding
+                  </h3>
+                <p>
+                    It's that time again, time to start cleaning up the leaves that are starting to come down to ensure that you don't start forming a forest floor where you invested in turf. We can help clear out that leaf debris on a regular schedule so you're not faced with a big bill.
+                </p>
+                  <p>
+                      Did you fall behind a little on your leaves? We also handle initial cleanups!
+                  </p>
+                <p>
+                    Now is the time to start thinking about seeding some rye grass if you want to maintain a lush, green lawn through the Fall & Winter, too.
+                </p>
+                    <button><a href="tel:7068331464">
+                        Call Or Text Us
+                    </a></button>
+            </div>
+            <div>
+                <img src="images/leaf-removal-clean-up.jpg" alt="Fertilizer being spread on grass, CSRA LawnCare provides lawn & ornamental treatment services to Augusta, Hephzibah, Grovetown, Evans, & North Augusta" />
+            </div>
+        </div>
+    `;
+  } else {
+    // Winter: December, January
+    content = `
+        <div class="twoCards">
+            <div>
+                <h3>
+                      Winter Prep
+                  </h3>
+                <p>
+                    Just because it's Winter here & your plants are dormant doesn't mean they're inactive. The root systems are still alive & well, so it's important to ensure that your lawn has the right start for when Spring rolls around. 
+                </p>
+                <p>
+                    Core aeration can help reduce soil compaction so your grass has an easier time to thicken up in the Spring. It also makes it easier for water & nutrients to reach the root system, giving it a nice little boost to kick off the growing season.
+                </p>
+                    <button><a href="tel:7068331464">
+                        Call Or Text Us
+                    </a></button>
+            </div>
+            <div>
+                <img src="images/aeration.jpg" alt="Fertilizer being spread on grass, CSRA LawnCare provides lawn & ornamental treatment services to Augusta, Hephzibah, Grovetown, Evans, & North Augusta" />
+            </div>
+        </div>
+    `;
+  }
+
+  const contentContainer = document.getElementById('seasonal-content');
+  if (contentContainer) {
+    // Use innerHTML so the HTML markup in the string is rendered.
+    contentContainer.innerHTML = content;
+  }
+}
+
 // Accordions
 var accItem = document.getElementsByClassName('accordionItem');
 var accHD = document.getElementsByClassName('accordionItemHeading');
@@ -114,6 +224,7 @@ function submitFormWithAjax(form) {
 
 //Listener
 document.addEventListener('DOMContentLoaded', () => {
+    displaySeasonalContent();
     // let's check if our header & footer are already in storage to prevent that flash
     let headerHTML = localStorage.getItem('headerHTML');
     let footerHTML = localStorage.getItem('footerHTML');
