@@ -224,7 +224,8 @@ function submitFormWithAjax(form) {
 
 //Listener
 document.addEventListener('DOMContentLoaded', () => {
-    displaySeasonalContent();
+    const seasonalDiv = document.getElementById('seasonal-content');
+    seasonalDiv && displaySeasonalContent();
     // let's check if our header & footer are already in storage to prevent that flash
     let headerHTML = localStorage.getItem('headerHTML');
     let footerHTML = localStorage.getItem('footerHTML');
