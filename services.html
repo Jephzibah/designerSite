@@ -53,7 +53,24 @@
     </script>
 </head>
 
-
+<style>
+    .slider-container {
+        position: relative;
+        width: 600px;
+        height: 400px;
+        overflow: hidden;
+    }
+    .slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+    .slide.active {
+        opacity: 1;
+    }
+</style>
 <body>
     <div id="header-placeholder"></div>
     <div class="pageWrap">
@@ -160,6 +177,42 @@
             </p>
             <p>
                 Off-season activities will focus on debris removal & judicious pruning of shrubs & small trees to best prepare for the next year's growing season.
+            </p>
+        </div>
+    </div> <!-- serviceBox -->
+    <div class="serviceBox serviceBoxFlip">
+        <div class="serviceImgDiv">
+            <a href="#"><img src="images/plantings0.webp" alt="New landscape installation for Augusta, Grovetown, Evans, Martinez, & North Augusta" /></a>
+        </div>
+        <div class="serviceTextDiv" id="serviceText2">
+            <h3>
+                New Plantings
+            </h3>
+            <p>
+                Need help sprucing up your property? We handle plant selection, sourcing, site prep, & installation. 
+            </p>
+            <p>
+                Shrubs & trees are guaranteed for a year following planting, too, so you can rest easy knowing that you're getting quality with your new landscape!
+            </p>
+        </div>
+    </div> <!-- serviceBox -->
+    <div class="serviceBox">
+        <div class="serviceImgDiv">
+            <div class="slider-container">
+                <img src="images/pineStraw1.webp" class="slide active" alt="Slide 1">
+                <img src="images/pineStraw2.webp" class="slide" alt="Slide 2">
+                <img src="images/pineStraw3.webp" class="slide" alt="Slide 3">
+            </div>        
+        </div>
+        <div class="serviceTextDiv" id="serviceText1">
+            <h3>
+                Mulch & Pine Straw Installation
+            </h3>
+            <p>
+                What better way to make your property warm & welcoming than with a fresh mulch or pine straw treatment. Cover up unsightly, old, grey straw with new, red straw. 
+            </p>
+            <p>
+                Mulching will provide better moisture retention for trees & shrubs, lowering your water bill & helping to enrich soild over time.
             </p>
         </div>
     </div> <!-- serviceBox -->

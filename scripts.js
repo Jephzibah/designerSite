@@ -221,6 +221,16 @@ function submitFormWithAjax(form) {
         messageContainer.textContent = "There was a problem with your submission. Please try again.";
     });
 }
+let slides = document.querySelectorAll(".slide");
+let currentSlideIndex = 0;
+
+function showNextSlide() {
+    slides[currentSlideIndex].classList.remove("active");
+    currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+    slides[currentSlideIndex].classList.add("active");
+}
+
+setInterval(showNextSlide, 3000);
 
 //Listener
 document.addEventListener('DOMContentLoaded', () => {
