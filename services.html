@@ -292,6 +292,18 @@
     </div>
     <div id="footer-placeholder"></div>
     <script src="scripts.js"></script>
+    <script>
+        let slides = document.querySelectorAll(".slide");
+        let currentSlideIndex = 0;
+
+        function showNextSlide() {
+            slides[currentSlideIndex].classList.remove("active");
+            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+            slides[currentSlideIndex].classList.add("active");
+        }
+
+        setInterval(showNextSlide, 3000);
+    </script>
 </body>
 
 </html>
