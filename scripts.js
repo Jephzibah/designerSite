@@ -60,7 +60,7 @@ function displaySeasonalContent() {
                       Leaf Cleanups & Overseeding
                   </h3>
                 <p>
-                    It's that time again, time to start cleaning up the leaves that are starting to come down to ensure that you don't start forming a forest floor where you invested in turf. We can help clear out that leaf debris on a regular schedule so you're not faced with a big bill.
+                    It's that time again, time to start cleaning up the leaves that are starting to come down to ensure that you don't start forming a forest floor where you invested in your lawn. We can help clear out that leaf debris on a regular schedule so you're not faced with a big bill.
                 </p>
                   <p>
                       Did you fall behind a little on your leaves? We also handle initial cleanups!
