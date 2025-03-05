@@ -139,7 +139,7 @@ h1,h2 {
 	word-spacing: 5px;
 }
 h1 {
-	font-size: 90px;
+	font-size: 50px;
 }
 h2 {
 	font-size: 30px;
@@ -154,37 +154,6 @@ p {
 @media screen and (max-width: 1000px) {
 	h1 {
 		font-size: 60px;
-	}
-}
-.ctaBtn,
-button {
-	background-color: var(--color-4);
-	font-family: var(--light-font);
-	font-size: 18px;
-	padding: 12px 30px;
-	color: var(--body-background);
-	transition: 250ms ease;
-	border: none;
-	border-radius: 3px;
-	margin: 15px auto;
-	display: table;
-	text-decoration: none;
-}
-button a {
-	color: var(--body-background);
-}
-@media screen and (min-width: 1025px) {
-	.ctaBtn:hover,
-	button:hover {
-		background-color: var(--color-3);
-		/* color: var(--color-4); */
-	}
-	.ctaBtn:hover a,
-	button:hover a {
-		color: var(--body-background);
-	}
-	button a:hover {
-		color: var(--body-background);
 	}
 }
 /* Header */
@@ -573,6 +542,13 @@ header {
 	background-color: var(--color-5);
 	color: var(--body-background);
 	justify-content: space-between;
+	a {
+		color: #fff;
+		transition: 250ms ease;
+	}
+}
+.homepageServiceBox a:hover {
+	color: var(--accent-color);
 }
 .homepageServiceBox:nth-of-type(2) {
 	flex-direction: column-reverse;
@@ -1581,4 +1557,35 @@ footer a {
 .footer-bottom {
     margin-top: 10px;
     font-size: 14px;
+}
+.pageWrap .ctaBtn,
+button {
+	background-color: var(--color-4);
+	font-family: var(--light-font);
+	font-size: 18px;
+	padding: 12px 30px;
+	color: var(--body-background);
+	transition: 250ms ease;
+	border: none;
+	border-radius: 3px;
+	margin: 15px auto;
+	display: table;
+	text-decoration: none;
+}
+button a {
+	color: var(--body-background);
+}
+@media screen and (min-width: 1025px) {
+	.ctaBtn:hover,
+	button:hover {
+		background-color: var(--color-3);
+		/* color: var(--color-4); */
+	}
+	.ctaBtn:hover a,
+	button:hover a {
+		color: var(--body-background);
+	}
+	button a:hover {
+		color: var(--body-background);
+	}
 }
