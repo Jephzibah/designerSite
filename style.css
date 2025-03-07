@@ -141,6 +141,16 @@ h1,h2 {
 h1 {
 	font-size: 50px;
 }
+@media screen and (max-width: 1024px){
+	h1 {
+		font-size: 40px;
+	}	
+}
+@media screen and (max-width: 767px){
+	h1 {
+		font-size: 30px;
+	}	
+}
 h2 {
 	font-size: 30px;
 }
@@ -150,11 +160,6 @@ h3,h4,h5,h6 {
 p {
 	line-height: 1.5;
 	letter-spacing: .5px;
-}
-@media screen and (max-width: 1000px) {
-	h1 {
-		font-size: 60px;
-	}
 }
 /* Header */
 #header-placeholder {
@@ -575,12 +580,27 @@ header {
 	margin: 1em;
 }
 
-.homePageCont {
+.homePageCont{
 	width: 1200px;
 	margin: auto;
 	max-width: 100%;
 }
-.homePageCont img {
+.pageCont {
+	padding: 3em;
+}
+@media screen and (max-width: 1024px) {
+	.pageCont {
+		padding: 2em;
+	}
+}
+@media screen and (max-width: 767px) {
+	.pageCont {
+		padding: 1em;
+	}
+}
+
+.homePageCont img,
+.pageCont img {
 	max-width: 100%;
 }
 #hp3 {
