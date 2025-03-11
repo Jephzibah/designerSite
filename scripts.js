@@ -221,9 +221,48 @@ function submitFormWithAjax(form) {
         messageContainer.textContent = "There was a problem with your submission. Please try again.";
     });
 }
+function openPopup() {
+    const popupOverlay = document.getElementById('popupOverlay');
+    popupOverlay.style.visibility = 'visible';
+    popupOverlay.style.opacity = '1';
+
+    // Add event listeners for Esc key and outside click
+    document.addEventListener('keydown', escClose);
+    popupOverlay.addEventListener('click', outsideClickClose);
+}
+
+function closePopup() {
+    const popupOverlay = document.getElementById('popupOverlay');
+    popupOverlay.style.opacity = '0';
+    setTimeout(() => {
+        popupOverlay.style.visibility = 'hidden';
+    }, 300);
+
+    // Remove event listeners after closing
+    document.removeEventListener('keydown', escClose);
+    popupOverlay.removeEventListener('click', outsideClickClose);
+}
+
+// Close popup when Esc key is pressed
+function escClose(event) {
+    if (event.key === 'Escape') {
+        closePopup();
+    }
+}
+
+// Close popup when clicking outside the modal
+function outsideClickClose(event) {
+    const popup = document.querySelector('.popup');
+    if (!popup.contains(event.target)) {
+        closePopup();
+    }
+}
 
 //Listener
 document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll("[onclick='openPopup()']").forEach((el) => {
+        el.addEventListener("click", openPopup);
+    });
     const seasonalDiv = document.getElementById('seasonal-content');
     seasonalDiv && displaySeasonalContent();
     // let's check if our header & footer are already in storage to prevent that flash

@@ -1,4 +1,58 @@
 <!-- you just need to edit this file for your header -->
+<style>
+    /* Popup styles */
+    .popup-overlay {
+        position: fixed;
+        z-index: 99;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .popup {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+        width: 300px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        position: relative;
+    }
+    .popup .close-btn {
+        position: absolute;
+        top: -1em;
+        right: -.75em;
+        background:none;
+        border:none;
+        font-size: 1.5em;
+        cursor: pointer;
+        color: #333;
+    }
+    .popup .close-btn:hover {
+        color: red;
+    }
+    .popup .cta-button {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 15px;
+        background: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    .popup .cta-button:hover {
+        background: #0056b3;
+    }
+</style>
+
 <header>
     <nav id="navbar">
         <div class="mobile-nav" style="display: none;">
@@ -13,6 +67,7 @@
                 <!-- <li><a href="index.html">Home</a></li> -->
                 <li><a href="about.html">About</a></li>
                 <li><a href="services.html">Services</a></li>
+                <li><a onclick="openPopup()">Job Openings</a></li>
                 <!-- <li><a href="https://customer.csralawncare.com/lawn-care-services/">Services</a></li> -->
                 <!-- Dropdown Menu Example -->
                 <!-- <li class="dropdown">
@@ -45,3 +100,18 @@
         </div>
     </nav>
 </header>
+<div class="popup-overlay" id="popupOverlay">
+    <div class="popup">
+        <button class="close-btn" onclick="closePopup()">✖</button>
+        <p>Part time work available now, minimum $15/hour!</p>
+        <p>
+            Veterans will receive preference, experience will help immensely. This could very well transition into a full time job.
+        </p>
+        <p>
+            Note that a criminal background check is required for this position. 
+        </p>
+        <a class="cta-button" href="mailto:contact@csralawncare.com?subject=I%20am%20interested%20in%20the%20opening">
+            Email For More Info
+        </a>
+    </div>
+</div>
