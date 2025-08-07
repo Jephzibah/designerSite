@@ -4,7 +4,12 @@
 	 	You can completely change the look & feel of this temlplate by 
 		changing these root colors & fonts to your brand's palette & typography
 	 */
-	--body-background: #fff;
+	/* --body-background: linear-gradient(#15295e, #323232); */
+	--body-background: 
+	linear-gradient(217deg, rgba(19, 20, 74, 0.8), rgb(255 0 0 / 0) 40%),
+	linear-gradient(127deg, rgba(8, 44, 11, 0.8), rgb(0 255 0 / 0) 50%),
+	linear-gradient(336deg, rgba(0, 0, 0, 0.8), rgb(0 0 255 / 0) 100%);
+	;
 	--accent-color: #7f8c59;
 	--color-1: #e1eade;
 	--color-2: #d0dde5;
@@ -14,8 +19,8 @@
 	--color-6: 241, 240, 236; /* this is an rgb of color-5 & is used in the accordion */
 	--translucent1: rgba(255,255,255,.5);
 	--translucent2: rgba(0,0,0,.5);
-	--text-color: #323232;
-	--text-color2: #000;
+	--text-color: #fff;
+	--text-color2: #f6f6f6;
 	--header-font: 'PlayfairDisplay-Regular', cursive;
 	--main-body-font: 'Lato-Regular', sans-serif;
 	--light-font: 'Lato-Light', sans-serif;
@@ -127,7 +132,7 @@ body, html {
     padding: 0;
     font-family: var(--main-body-font);
     overflow-x: clip;
-	background-color: var(--body-background);
+	background: var(--body-background);
 }
 a {
 	cursor: pointer;
@@ -197,9 +202,36 @@ header {
     background-color: var(--body-background);
     padding: 20px;
 }
+@-webkit-keyframes rollIn {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateX(-100%) rotate(-120deg);
+	}
+
+	100% {
+		opacity: 1;
+		-webkit-transform: translateX(0px) rotate(0deg);
+	}
+}
+
+@keyframes rollIn {
+	0% {
+		opacity: 0;
+		transform: translateX(-100%) rotate(-120deg);
+	}
+}
 .logo {
-    flex: 0 1 auto;
-    cursor: pointer;
+  flex: 0 1 auto;
+  position: relative;
+  cursor: pointer;
+  animation: rollIn 2s ease;
+}
+.logo.animated { 
+  animation: none;
+}
+.logo img {
+  border-radius: 100%;
+  box-shadow: 0px 0px 30px 0px #666;
 }
 
 .logo img {
@@ -218,9 +250,6 @@ header {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-}
-#navbar * {
-	cursor: pointer;
 }
 .navbar-links {
     display: flex;
@@ -346,7 +375,7 @@ header {
 }
 
 
-@media (max-width: 767px) {
+@media (max-width: 800px) {
     .navbar-links {
         display: none;
     }
@@ -477,39 +506,160 @@ header {
 .headerBanner .bgImage.visible {
 	opacity: 1;
 }
+#personalSpace {
+	display: flex;
+	align-items: center;
+	flex: 1;
+	gap: 35px;
+	width: 30%;
+	position: relative;
+	z-index: 99;
+}
 #headerBannerText {
-  width: 1000px;
-  max-width: 100%;
-  position: relative;
-  padding: 0 55px;
-  z-index: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+@keyframes dropIn {
+	0% {
+		opacity: 0;
+		top: -225px;
+	}
+	25% {
+		opacity: 1;
+		top: -75px;
+	}
+	50% {
+		opacity: 1;
+		top: -50px;
+	}
+	75% {
+		opacity: 1;
+		top: -25px;
+	}
+	100% {
+		opacity: 1;
+		top:0;
+	}
 }
 #headerBannerText h1 {
-	font-size: 6vw;
-	margin: 5px auto;
-	color: var(--body-background);
-	text-align: center;
+	font-size: 40px;
+	margin: 0;
+	color: #fff;
+	opacity: .75;
+	span {
+		position: relative;
+	}
+}
+#headerBannerText h1 span:nth-of-type(1) {
+	animation: dropIn 250ms forwards ease;
 	opacity:0;
-	animation: fadeIn 3s linear;
-	animation-fill-mode: forwards;
-	animation-delay: 1.5s;
 	will-change: opacity;
+	animation-delay: 2000ms;
+}
+#headerBannerText h1 span:nth-of-type(2) {
+	animation: dropIn 250ms forwards ease;
+	opacity:0;
+	will-change: opacity;
+	animation-delay: 2250ms;
+}
+#headerBannerText h1 span:nth-of-type(3) {
+	animation: dropIn 250ms forwards ease;
+	opacity:0;
+	will-change: opacity;
+	animation-delay: 2450ms;
+}
+#headerBannerText h1 span:nth-of-type(4) {
+	animation: dropIn 250ms forwards ease;
+	opacity:0;
+	will-change: opacity;
+	animation-delay: 2650ms;
+}
+#headerBannerText h1 span:nth-of-type(5) {
+	animation: dropIn 250ms forwards ease;
+	opacity:0;
+	will-change: opacity;
+	animation-delay: 2850ms;
+}
+#headerBannerText h1 span:nth-of-type(6) {
+	animation: dropIn 250ms forwards ease;
+	opacity:0;
+	will-change: opacity;
+	animation-delay: 3050ms;
+}
+#headerBannerText h1 span:nth-of-type(7) {
+	animation: dropIn 250ms forwards ease;
+	opacity:0;
+	will-change: opacity;
+	animation-delay: 3250ms;
+}
+#headerBannerText h1 span:nth-of-type(8) {
+	animation: dropIn 250ms forwards ease;
+	opacity:0;
+	will-change: opacity;
+	animation-delay: 3450ms;
+}
+#headerBannerText h1 span:nth-of-type(9) {
+	animation: dropIn 250ms forwards ease;
+	opacity:0;
+	will-change: opacity;
+	animation-delay: 3650ms;
+}
+#headerBannerText h1 span:nth-of-type(10) {
+	animation: dropIn 250ms forwards ease;
+	opacity:0;
+	will-change: opacity;
+	animation-delay: 3850ms;
+}
+#headerBannerText h1 span:nth-of-type(11) {
+	animation: dropIn 250ms forwards ease;
+	opacity:0;
+	will-change: opacity;
+	animation-delay: 4050ms;
+}
+#headerBannerText h1 span:nth-of-type(12) {
+	animation: dropIn 250ms forwards ease;
+	opacity:0;
+	will-change: opacity;
+	animation-delay: 4250ms;
 }
 #headerBannerText p {
 	font-style: italic;
-	color: var(--body-background);
-	text-align: center;
-	opacity:0;
-	animation: fadeIn 3s linear;
-	animation-fill-mode: forwards;
-	animation-delay: 3s;
-	will-change: opacity;
-	font-size: 20px;
+	font-weight: 900;
+	background: linear-gradient(to left, #5A8B9C, #8AB4CF, #8C6EE0 75%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 	margin: 0;
+	opacity:0;
+	animation: fadeIn 2s linear;
+	animation-fill-mode: forwards;
+	will-change: opacity;
+	animation-delay: 4.1s;
+}
+#headerBannerText.animated h1 span,
+#headerBannerText.animated p {
+	animation: none;
+	opacity:1;
+}
+@media screen and (max-width: 800px) {
+	#personalSpace {
+		gap: 2vw;
+	}
+	#headerBannerText h1 {
+			font-size: 25px;
+	}
+}
+@media screen and (max-width: 350px) {
+	#headerBannerText h1 {
+			font-size: 20px;
+	}
+	#headerBannerText p {
+		font-size: 12px;
+	}
 }
 #hp2 {
 	position: relative;
-	padding-top: 35vw;
 }
 #homepageServices {
 	display: flex;
@@ -670,26 +820,7 @@ header {
 		font-size: 11px;
 	}
 }
-@media screen and (max-width:1100px) {
-	.headerBanner {
-		aspect-ratio: 15/9;
-	}
-	#hp2 {
-	  padding-top: 60vw;
-	}
-}
-@media screen and (max-width:992px){
-	#hp2 {
-	  padding-top: 60vw;
-	}
-}
 @media screen and (max-width:767px){
-	#headerBannerCont {
-		top: 7em;
-	}
-	#hp2 {
-	  padding-top: 60vw;
-	}
 	.homepageServiceBox h3 {
 		font-size: 20px;
 		margin: 0 0 10px;
@@ -703,18 +834,6 @@ header {
 	}
 }
 @media screen and (max-width: 800px) {
-	#headerBannerText {
-		padding: 0 25px;
-	}
-	#headerBannerText h1 {
-		font-size: 10vw;
-		margin-bottom: 0;
-	}
-	#headerBannerText p
-	{
-	  font-size: 14px;
-	  line-height: 1.5;
-	}
 	.homepageServiceBox h3 {
 		font-size: 16px;
 	}
@@ -732,23 +851,7 @@ header {
 		flex: 1;
 	}
 }
-@media screen and (max-width: 600px) {
-	.headerBanner {
-		aspect-ratio: 12/9;
-	}
-	#hp2 {
-	   padding-top: 75vw;
-	}
-/*		Might need to uncomment this if the p text becomes lengthy
-	#headerBannerText p {
-		display: none;
-	}
-*/		
-}
 @media screen and (max-width: 475px) {
-	#hp2 {
-	   padding-top: 75vw;
-	}
 	.homepageServiceBox p {
 		line-height: 1.25;
 		margin: 0 1px .5em;
@@ -766,11 +869,6 @@ header {
 	#post-2065 {
 		padding-left:0;
 		padding-right:0;
-	}
-}
-@media screen and (max-width: 350px) {
-	#hp2 {
-	   padding-top: 75vw;
 	}
 }
 @keyframes fadeIn {

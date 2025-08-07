@@ -1,4 +1,67 @@
 // scripts.js
+function justOneRoll() {
+  const elements = [
+    document.querySelector('.logo'),
+    document.querySelector('#headerBannerText')
+  ].filter(Boolean);
+
+  if (elements.length === 0) return;
+
+  if (sessionStorage.getItem('logoAnimated')) {
+    elements.forEach(el => el.classList.add('animated'));
+  } else {
+    setTimeout(() => {
+      elements.forEach(el => el.classList.add('animated'));
+      sessionStorage.setItem('logoAnimated', 'yes');
+    }, 6000);
+  }
+}
+
+// Scroll animations
+	function lerp(a, b, t) { return a + (b - a) * t; }
+	function clamp(x, min, max) { return Math.max(min, Math.min(max, x)); }
+
+	const slideDistance = 350; 
+	const triggerStart = 0.85; 
+	const triggerEnd = 0.4;   
+
+	function getScrollProgress(el) {
+	  const rect = el.getBoundingClientRect();
+	  const windowH = window.innerHeight || document.documentElement.clientHeight;
+	  const start = windowH * triggerStart;
+	  const end = windowH * triggerEnd;
+	  const elemMid = rect.top + rect.height/2;
+
+	  let progress = (start - elemMid) / (start - end);
+	  return clamp(progress, 0, 1);
+	}
+
+	function updateScrollAnimations() {
+	  document.querySelectorAll('.inFromLeft').forEach(el => {
+	    const progress = getScrollProgress(el);
+	    el.style.transform = `translateX(${lerp(-slideDistance, 0, progress)}px)`;
+	  });
+	  document.querySelectorAll('.inFromRight').forEach(el => {
+	    const progress = getScrollProgress(el);
+	    el.style.transform = `translateX(${lerp(slideDistance, 0, progress)}px)`;
+	  });
+	}
+
+	function onScrollOrResize() {
+	  if (!onScrollOrResize.scheduled) {
+	    onScrollOrResize.scheduled = true;
+	    requestAnimationFrame(() => {
+	      updateScrollAnimations();
+	      onScrollOrResize.scheduled = false;
+	    });
+	  }
+	}
+	window.addEventListener('scroll', onScrollOrResize);
+	window.addEventListener('resize', onScrollOrResize);
+	document.addEventListener('DOMContentLoaded', updateScrollAnimations);
+
+	updateScrollAnimations();
+
 // Accordions
 var accItem = document.getElementsByClassName('accordionItem');
 var accHD = document.getElementsByClassName('accordionItemHeading');
@@ -114,7 +177,7 @@ function submitFormWithAjax(form) {
 
 //Listener
 document.addEventListener('DOMContentLoaded', () => {
-    // let's check if our header & footer are already in storage to prevent that flash
+     // let's check if our header & footer are already in storage to prevent that flash
     let headerHTML = localStorage.getItem('headerHTML');
     let footerHTML = localStorage.getItem('footerHTML');
 
@@ -134,6 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
                 initMobileNav();
+                justOneRoll();
             })
             .catch(err => console.error('Failed to load header: ', err));
 
