@@ -17,6 +17,12 @@ function justOneRoll() {
   }
 }
 
+document.querySelectorAll('.underlineMe').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    el.classList.add('grown');
+  });
+});
+
 // Scroll animations
 	function lerp(a, b, t) { return a + (b - a) * t; }
 	function clamp(x, min, max) { return Math.max(min, Math.min(max, x)); }

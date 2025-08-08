@@ -646,15 +646,29 @@ header {
 	display: table;
 	width: auto;
 }
-
+#introH2 {
+  color: #bdbd43;
+  position: absolute;
+  top: -12%;
+  z-index: -1;
+  font-size: 7vw;
+  text-transform: capitalize;
+  left: 39%;
+  opacity: 0;
+  animation: fadeIn 3s ease forwards;
+  animation-delay: 1.5s;
+}
 #homeImg1 {
 	filter: sepia(100%) brightness(.5);
 	transition: 450ms ease;
+	opacity: .7;
 }
 #pic1Cont:hover #homeImg1 {
 	filter: none;
+	opacity: 1;
 }
-#homeImg1Descriptor {
+#homeImg1Descriptor,
+#homeImg1Descriptor2 {
 	--border-width: 2px;
 	--border-radius: 22px;
 	--color-1: #3a3af5;
@@ -682,7 +696,27 @@ header {
 	border-radius: var(--border-radius);
 	border: none;
 }
-#homeImg1Descriptor span {
+#homeImg1Descriptor2 {
+	position: absolute;
+	top: 20%;
+	left: 35%;
+	background-color: #fff;
+	padding: 2px 10px;
+	transition: 750ms ease;
+	opacity: 0;
+	will-change: opacity;
+	background: linear-gradient(to right, #3a3af5, #ee56e9),
+    linear-gradient(to right, #3a3af5, #ee56e9);
+	background-position: var(--border-radius) 0, var(--border-radius) 100%;
+	background-repeat: no-repeat;
+	background-size: calc(100% - var(--border-radius) - var(--border-radius))
+    var(--border-width);
+	border-radius: var(--border-radius);
+	border: none;
+	transform: rotate(-27deg);
+}
+#homeImg1Descriptor span,
+#homeImg1Descriptor2 span {
 	width: 100%;
 	height: 100%;
 	padding: 2px 10px;
@@ -700,8 +734,20 @@ header {
 	left: -9px;
 	z-index: -1;
 }
+#homeImg1Descriptor2 span:after {
+	content: '';
+	position: absolute;
+	width: 110%;
+	height: 100%;
+	background-color: #fff;
+	border-radius: 22px;
+	left: -9px;
+	z-index: -1;
+}
 #homeImg1Descriptor:before,
-#homeImg1Descriptor:after {
+#homeImg1Descriptor:after,
+#homeImg1Descriptor2:before,
+#homeImg1Descriptor2:after  {
   content: "";
   display: block;
   position: absolute;
@@ -712,7 +758,8 @@ header {
   position: absolute;
 }
 
-#homeImg1Descriptor:before {
+#homeImg1Descriptor:before,
+#homeImg1Descriptor2:before {
   left: 0;
   border: var(--border-width) solid var(--color-1);
   border-top-left-radius: var(--border-radius);
@@ -720,7 +767,8 @@ header {
   border-right-color: transparent;
 }
 
-#homeImg1Descriptor:after {
+#homeImg1Descriptor:after,
+#homeImg1Descriptor2:after {
   right: 0;
   border: var(--border-width) solid var(--color-2);
   border-top-right-radius: var(--border-radius);
@@ -730,6 +778,61 @@ header {
 #pic1Cont:hover #homeImg1Descriptor {
 	opacity: 1;
 }
+#pic1Cont:hover #homeImg1Descriptor2 {
+	opacity: 1;
+	transition-delay: 1.5s;
+}
+#homeIntro {
+	color: #fff;
+	font-size: 17px;
+	position: absolute;
+	bottom: 35px;
+	left: -75px;
+	width: 250px;
+}
+.emailMe {
+	background: linear-gradient(to left, #3a3af5, #ee56e9);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.underlineMe {
+  position: relative;
+  display: inline-block;
+}
+
+.underlineMe::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(to left, #3a3af5, #ee56e9);
+  transform: scaleX(0);
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+.underlineMe:hover::after,
+.underlineMe:focus-visible::after {
+  animation: underlineGrow 300ms linear forwards;
+}
+
+.underlineMe.grown:not(:hover)::after {
+  animation: underlineShrink 300ms linear forwards;
+}
+
+@keyframes underlineGrow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@keyframes underlineShrink {
+  from { transform: scaleX(1); }
+  to   { transform: scaleX(0); }
+}
+
 @media screen and (max-width: 800px) {
 	#personalSpace {
 		gap: 2vw;
