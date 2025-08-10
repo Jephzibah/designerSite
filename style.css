@@ -645,18 +645,32 @@ header {
 #pic1Cont {
 	display: table;
 	width: auto;
+	flex: 0 1 130%;
 }
 #introH2 {
   color: #bdbd43;
   position: absolute;
-  top: -12%;
+  top: -7vw;
   z-index: -1;
-  font-size: 7vw;
+  font-size: 5vw;
   text-transform: capitalize;
-  left: 39%;
+  left: 12%;
   opacity: 0;
   animation: fadeIn 3s ease forwards;
   animation-delay: 1.5s;
+}
+#introH2 span {
+  position: absolute;
+  left: 10vw;
+  top: 80%;
+}
+#aboutIntro {
+	flex: 0 1 50%;
+	padding: 1em;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 #homeImg1 {
 	filter: sepia(100%) brightness(.5);
@@ -786,8 +800,8 @@ header {
 	color: #fff;
 	font-size: 17px;
 	position: absolute;
-	bottom: 35px;
-	left: -75px;
+	bottom: 3%;
+	left: 5%;
 	width: 250px;
 }
 .emailMe {
@@ -851,6 +865,42 @@ header {
 }
 #hp2 {
 	position: relative;
+	display: flex;
+	gap: 55px;
+}
+@media screen and (max-width: 1200px) {
+	#introH2 {
+		font-size: 6.5vw;
+		top: -9.5vw;
+		width: 55%;
+		left: 35%;
+	}
+	#introH2 span {
+		position: unset;
+	}
+}
+@media screen and (max-width: 1000px) {
+	#hp2 {
+		flex-direction: column;
+		gap: 0;
+	}
+	#homeIntro {
+		bottom: 25%;
+	}
+}
+@media screen and (max-width: 733px) {
+	#homeIntro {
+		bottom: 30%;
+	}
+}
+@media screen and (max-width: 575px) {
+	#homeIntro {
+		font-size: 13px;
+		position: relative;
+		bottom: 0;
+		padding: 0 1em;
+		margin-bottom: 0;
+	}
 }
 #homepageServices {
 	display: flex;
