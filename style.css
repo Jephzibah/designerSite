@@ -181,7 +181,6 @@ body, html {
 .two_cards img,
 .three_cards img {
 	max-width: 100%;
-	box-shadow: 0 10px 20px -6px #00000050;
 	margin-bottom: 25px;
 }
 .skillCard {
@@ -1046,7 +1045,8 @@ header {
 	position: relative;
 	background-color: #f6f6f6;
 }
-#hp3 h2 {
+#hp3 h2,
+#hp4 h2 {
 	text-transform: capitalize;
 }
 #hp3imgDiv img {
@@ -1069,11 +1069,33 @@ header {
 	border-bottom: 1px solid var(--text-color);
 }
 #hp4 {
-	padding: 75px 0;
+	padding: 15px 0;
 	position: relative;
-	text-align: center;
+	color: #fff;
 }
-#hp4:before {
+#hp4 .two_cards:first-of-type,
+#hp4 .two_cards:first-of-type h2 {
+	margin-bottom: 0;
+}
+#hp4 .two_cards:first-of-type svg {
+	margin-bottom: -28px;
+}
+#hp4 .skillCard {
+	padding: 50px 0 0;
+	img {
+		object-fit: cover;
+		margin-bottom: -5px;
+	}
+	h4 {
+		margin-bottom: 0;
+	}
+}
+#hp4 .borderless {
+	border: none;
+	padding: 0;
+}
+
+/* #hp4:before {
 	position: absolute;
 	content: '';
 	width: calc(100% + 100px);
@@ -1081,12 +1103,12 @@ header {
 	background: var(--color-1);
 	left: -50px;
 	top: 0;
-}
+} */
 #hp4 h2 {
 	text-align: center;
 	position: relative;
 }
-#hp4 h2:after {
+/* #hp4 h2:after {
 	content: '';
 	width: 95px;
 	height: 3px;
@@ -1095,7 +1117,7 @@ header {
 	margin: auto;
 	position: relative;
 	top: .5em;
-}
+} */
 #hp4 button {
 	display: table;
 	margin: auto;
