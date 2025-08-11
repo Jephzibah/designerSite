@@ -133,6 +133,7 @@ body, html {
     font-family: var(--main-body-font);
     overflow-x: clip;
 	background: var(--body-background);
+	scroll-behavior: smooth;
 }
 .single {
 	height: 100%;
