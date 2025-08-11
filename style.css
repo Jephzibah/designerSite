@@ -147,6 +147,7 @@ body, html {
 	align-items: center;
 	gap: 2%;
 	margin: 25px auto;
+	padding: 1em;
 }
 .three_cards {
 	display: flex;
@@ -807,7 +808,7 @@ header {
 #homeImg1Descriptor2 {
 	position: absolute;
 	top: 20%;
-	left: 35%;
+	left: 405px;
 	background-color: #fff;
 	padding: 2px 10px;
 	transition: 750ms ease;
@@ -941,6 +942,62 @@ header {
   to   { transform: scaleX(0); }
 }
 
+@media screen and (max-width: 1050px) {
+	#homeImg1Descriptor2 {
+		transform: rotate(0deg);
+		top: unset;
+		bottom: 25px;
+		left: 455px;
+	}
+}
+@media screen and (max-width: 1000px) {
+	#homeImg1Descriptor2 {
+		bottom: 240px;
+	}
+}
+@media screen and (max-width: 675px) {
+	#homeImg1Descriptor2 {
+		left: 55vw;
+	}
+}
+@media screen and (max-width: 637px) {
+	#homeImg1Descriptor2 {
+		bottom: 290px;
+	}
+}
+@media screen and (max-width: 575px) {
+	#homeImg1Descriptor2 {
+		bottom: 370px;
+	}
+}
+@media screen and (max-width: 552px) {
+	#homeImg1Descriptor2 {
+		bottom: 400px;
+		left: 45vw;
+	}
+}
+@media screen and (max-width: 429px) {
+	#homeImg1Descriptor {
+		font-size: 12px;
+		top: -5px;
+		left: 1%;
+	}
+	#homeImg1Descriptor2 {
+		top: 35px;
+		font-size: 12px;
+		bottom: unset;
+		left: unset;
+		right: 10px;
+	}
+	#homeImg1Descriptor span, 
+	#homeImg1Descriptor2 span {
+		padding: 1px 10px;
+	}
+	#homeImg1Descriptor::after, 
+	#homeImg1Descriptor2::after {
+		right: 5px;
+	}
+}
 @media screen and (max-width: 800px) {
 	#personalSpace {
 		gap: 2vw;
@@ -985,6 +1042,11 @@ header {
 @media screen and (max-width: 733px) {
 	#homeIntro {
 		bottom: 30%;
+	}
+}
+@media screen and (max-width: 637px) {
+	#homeIntro {
+		bottom: 38%;
 	}
 }
 @media screen and (max-width: 575px) {
