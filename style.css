@@ -214,6 +214,9 @@ body, html {
 	}
 }
 @media screen and (max-width: 900px){
+	.headliner h3 {
+		font-size: 1em;
+	}
 	.two_cards img,
 	.three_cards img {
 		display: table;
