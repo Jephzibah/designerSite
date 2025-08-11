@@ -27,7 +27,7 @@ document.querySelectorAll('.underlineMe').forEach(el => {
 	function lerp(a, b, t) { return a + (b - a) * t; }
 	function clamp(x, min, max) { return Math.max(min, Math.min(max, x)); }
 
-	const slideDistance = 350; 
+	const slideDistance = 450; 
 	const triggerStart = 0.85; 
 	const triggerEnd = 0.4;   
 
@@ -228,6 +228,29 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    const skillCards = document.querySelectorAll('.skillCard');
+  let observer;
+
+  if (skillCards.length) {
+    observer = new IntersectionObserver((entries) => {
+      const inView = entries
+        .filter(entry => entry.isIntersecting && !entry.target.classList.contains('fadeIn'))
+        .sort((a, b) => a.target.dataset.index - b.target.dataset.index);
+
+      if (inView.length) {
+        inView.forEach((entry, i) => {
+          setTimeout(() => {
+            entry.target.classList.add('fadeIn');
+          }, i * 450); 
+        });
+      }
+    }, { threshold: .8 });
+
+    skillCards.forEach((card, idx) => {
+      card.dataset.index = idx; 
+      observer.observe(card);
+    });
+  }
     // Creating Mobile Nav Links
 function initMobileNav() {
     const toggleButton = document.querySelector('.toggle-button');

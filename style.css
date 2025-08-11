@@ -134,6 +134,98 @@ body, html {
     overflow-x: clip;
 	background: var(--body-background);
 }
+.single {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.two_cards {
+	display: flex;
+	align-items: center;
+	gap: 2%;
+	margin: 25px auto;
+}
+.three_cards {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	gap: 25px;
+	margin: 25px auto;
+	padding: 1em;
+}
+.single h3,
+.two_cards h3,
+.three_cards h3 {
+	font-size: 1.5em;
+	margin-bottom: 25px;
+}
+.single h4,
+.two_cards h4,
+.three_cards h4 {
+	font-size: 1.15em;
+	margin-bottom: 25px;
+}
+.two_cards>div{
+	flex-basis: 45%;
+}
+.three_cards>div{
+	flex: 1 30%;
+	display: flex;
+	flex-direction:column;
+}
+.fadeIn {
+	animation: fadeIn 2s linear forwards;
+}
+.two_cards img,
+.three_cards img {
+	max-width: 100%;
+	box-shadow: 0 10px 20px -6px #00000050;
+	margin-bottom: 25px;
+}
+.skillCard {
+	position: relative;
+	border: 1px solid #cacaca;
+	border-radius: 7px;
+	padding: 50px 7px 0;
+	overflow: clip;
+	opacity: 0;
+	will-change: opacity;
+}
+.headliner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 15px;
+	background: linear-gradient(to left, #3a3af5, #ee56e9);
+	color: #fff;
+	width: 100%;
+	padding: 10px 7px;
+	i {
+		font-size: 1.2em;
+	}
+	h3 {
+		margin: 0;
+	}
+}
+@media screen and (max-width: 900px){
+	.two_cards img,
+	.three_cards img {
+		display: table;
+		margin: 0 auto 25px;
+	}
+	.two_cards>div,
+	.three_cards>div {
+		flex-basis: 100%;
+	}
+	.flip {
+		flex-direction: column;
+	}
+}
 a {
 	cursor: pointer;
 	text-decoration: none;
@@ -665,6 +757,8 @@ header {
   top: 80%;
 }
 #aboutIntro {
+	display: flex;
+	flex-direction: column;
 	flex: 0 1 50%;
 	padding: 1em;
 	color: #fff;
@@ -805,7 +899,7 @@ header {
 	width: 250px;
 }
 .emailMe {
-	background: linear-gradient(to left, #3a3af5, #ee56e9);
+	background: linear-gradient(to left, #6c6cfc, #ee56e9);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
@@ -948,8 +1042,12 @@ header {
 	max-width: 100%;
 }
 #hp3 {
-	padding: 75px 0;
+	padding: 15px 0;
 	position: relative;
+	background-color: #f6f6f6;
+}
+#hp3 h2 {
+	text-transform: capitalize;
 }
 #hp3imgDiv img {
   width: 450px;
