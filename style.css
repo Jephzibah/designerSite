@@ -7,7 +7,8 @@
 	/* --body-background: linear-gradient(#15295e, #323232); */
 	--body-background: 
 	linear-gradient(217deg, rgba(19, 20, 74, 0.8), rgb(255 0 0 / 0) 40%),
-	linear-gradient(127deg, rgba(8, 44, 11, 0.8), rgb(0 255 0 / 0) 50%),
+	/* linear-gradient(127deg, rgba(8, 44, 11, 0.8), rgb(0 255 0 / 0) 50%), */
+	linear-gradient(127deg, rgba(37, 8, 44, 0.8), rgba(183, 0, 255, 0) 50%),
 	linear-gradient(336deg, rgba(0, 0, 0, 0.8), rgb(0 0 255 / 0) 100%);
 	;
 	--accent-color: #7f8c59;
@@ -740,27 +741,21 @@ header {
 }
 #pic1Cont {
 	display: table;
+	position: relative;
 	width: auto;
 	flex: 0 1 130%;
 }
 #introH2 {
-  color: #bdbd43;
-  position: absolute;
-  top: -7vw;
-  z-index: -1;
-  font-size: 5vw;
+  font-size: 1.25em;
+  align-self: start;
   text-transform: capitalize;
-  left: 12%;
+  left: -22%;
   opacity: 0;
   animation: fadeIn 3s ease forwards;
   animation-delay: 1.5s;
 }
-#introH2 span {
-  position: absolute;
-  left: 10vw;
-  top: 80%;
-}
 #aboutIntro {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	flex: 0 1 50%;
@@ -953,33 +948,23 @@ header {
 		left: 455px;
 	}
 }
-@media screen and (max-width: 1000px) {
-	#homeImg1Descriptor2 {
-		bottom: 240px;
-	}
-}
 @media screen and (max-width: 675px) {
 	#homeImg1Descriptor2 {
 		left: 55vw;
 	}
 }
-@media screen and (max-width: 637px) {
-	#homeImg1Descriptor2 {
-		bottom: 290px;
-	}
-}
 @media screen and (max-width: 575px) {
 	#homeImg1Descriptor2 {
-		bottom: 370px;
+		bottom: unset;
+		top: 50px;
 	}
 }
 @media screen and (max-width: 552px) {
 	#homeImg1Descriptor2 {
-		bottom: 400px;
 		left: 45vw;
 	}
 }
-@media screen and (max-width: 429px) {
+@media screen and (max-width: 500px) {
 	#homeImg1Descriptor {
 		font-size: 12px;
 		top: -5px;
@@ -1022,34 +1007,11 @@ header {
 	display: flex;
 	gap: 55px;
 }
-@media screen and (max-width: 1200px) {
-	#introH2 {
-		font-size: 6.5vw;
-		top: -9.5vw;
-		width: 55%;
-		left: 35%;
-	}
-	#introH2 span {
-		position: unset;
-	}
-}
 @media screen and (max-width: 1000px) {
 	#hp2 {
 		flex-direction: column;
+		align-items: center;
 		gap: 0;
-	}
-	#homeIntro {
-		bottom: 25%;
-	}
-}
-@media screen and (max-width: 733px) {
-	#homeIntro {
-		bottom: 30%;
-	}
-}
-@media screen and (max-width: 637px) {
-	#homeIntro {
-		bottom: 38%;
 	}
 }
 @media screen and (max-width: 575px) {
@@ -1059,6 +1021,8 @@ header {
 		bottom: 0;
 		padding: 0 1em;
 		margin-bottom: 0;
+		width: auto;
+		left: 0;
 	}
 }
 #homepageServices {
