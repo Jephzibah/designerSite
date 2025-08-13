@@ -1122,6 +1122,7 @@ header {
 	}
 }
 #hp4 .borderless {
+	background-color: transparent;
 	border: none;
 	padding: 0;
 }
