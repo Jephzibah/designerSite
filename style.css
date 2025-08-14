@@ -1026,6 +1026,34 @@ header {
 		left: 0;
 	}
 }
+#personally {
+	color: #fff;
+	li {
+		opacity: 0;
+		will-change: opacity;
+		animation: fadeIn 500ms linear forwards;
+	}
+}
+#personally .two_cards {
+	margin: 0 auto;
+	flex-wrap: wrap;
+	h2 {
+		text-transform: capitalize;
+	}
+}
+	#personally li:nth-of-type(2) {
+		animation-delay: 550ms;
+	}
+	#personally li:nth-of-type(3) {
+		animation-delay: 1100ms;
+	}
+	#personally li:nth-of-type(4) {
+		animation-delay: 1650ms;
+	}
+	#personally li:nth-of-type(5) {
+		animation-delay: 2200ms;
+	}
+
 #homepageServices {
 	display: flex;
 	flex-wrap: wrap;

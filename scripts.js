@@ -1,4 +1,39 @@
 // scripts.js
+const zip = "30815";
+
+fetch(`https://api.zippopotam.us/us/${zip}`)
+.then(res => res.json())
+.then(data => {
+    const { latitude, longitude } = data.places[0];
+
+    return fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&temperature_unit=fahrenheit`);
+})
+.then(res => res.json())
+.then(weatherData => {
+    const initialTemp = weatherData.current_weather.temperature;
+    const temp = Math.trunc(initialTemp);
+    let message = '';
+
+    if (temp > 100) {
+    message = ` - it's ${temp}°, who authorized this? 🥵`;
+    } else if (temp > 80) {
+    message = ` - it's ${temp}° so let's stay in the air conditioning!`;
+    } else if (temp > 65) {
+    message = ` - it's ${temp}°, perfect!`;
+    } else if (temp > 45) {
+    message = ` - at ${temp}° it's time for chili!`;
+    } else {
+    message = ` - ${temp}° is cold for a southern boy 🥶`;
+    }
+
+    document.getElementById('tempDisplay').textContent = message;
+
+})
+.catch(err => {
+    console.error("Weather fetch failed", err);
+    document.getElementById('tempDisplay').textContent = "";
+});
+    
 function justOneRoll() {
   const elements = [
     document.querySelector('.logo'),
