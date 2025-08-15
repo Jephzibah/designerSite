@@ -147,7 +147,7 @@ body, html {
 	display: flex;
 	align-items: center;
 	gap: 2%;
-	margin: 25px auto;
+	margin: 0 auto;
 	padding: 1em;
 }
 .three_cards {
@@ -1107,6 +1107,7 @@ header {
 #hp3 h2,
 #hp4 h2 {
 	text-transform: capitalize;
+	margin: 0;
 }
 #hp3imgDiv img {
   width: 450px;
@@ -1127,6 +1128,62 @@ header {
 #processSteps li:last-of-type {
 	border-bottom: 1px solid var(--text-color);
 }
+#technologiesHeader {
+	padding: 0 1em;
+	color: #fff;
+	h3 {
+		position: relative;
+		display: table;
+		width: auto;
+		opacity: 0;
+		will-change: opacity;
+	}
+	h3:after {
+		position: absolute;
+		content: '';
+		width: 75px;
+		height: 3px;
+		border-bottom: 3px solid #fff;
+		bottom: -5px;
+		right: -15px;
+	}
+}
+#technologies {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1em;
+	gap: 25px;
+	color: #fff;
+	flex-wrap: wrap;
+	i {
+		font-size: 45px;
+		cursor: pointer;
+		position: relative;
+		opacity: 0;
+		will-change: opacity;
+	}
+	i::after {
+		content: attr(data-tooltip);
+		position: absolute;
+		bottom: -25px;
+		left: 50%;
+		transform: translateX(-50%);
+		background: linear-gradient(to left, #3a3af5, #ee56e9);
+		color: #fff;
+		font-size: 0.75rem;
+		padding: 6px 8px;
+		border-radius: 4px;
+		white-space: nowrap;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.2s ease;
+		z-index: 10;
+	}
+	i:hover::after {
+		opacity: 1;
+	}
+}
 #hp4 {
 	padding: 15px 0;
 	position: relative;
@@ -1135,9 +1192,6 @@ header {
 #hp4 .two_cards:first-of-type,
 #hp4 .two_cards:first-of-type h2 {
 	margin-bottom: 0;
-}
-#hp4 .two_cards:first-of-type svg {
-	margin-bottom: -28px;
 }
 #hp4 .skillCard {
 	padding: 50px 0 0;

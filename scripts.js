@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    const skillCards = document.querySelectorAll('.skillCard');
+    const skillCards = document.querySelectorAll('.skillCard, .fadeMe');
   let observer;
 
   if (skillCards.length) {
