@@ -172,11 +172,10 @@ carousel.addEventListener('mouseleave', startCarousel);
 function loadContactForm() {
     const container = document.getElementById('contactFormContainer');
     if (container) {
-        fetch('form.html') // Adjust the path as necessary
+        fetch('form.html') 
             .then(response => response.text())
             .then(html => {
                 container.innerHTML = html;
-                // Initialize form functionality after loading
                 initFormFunctionality();
             })
             .catch(err => console.error('Failed to load the contact form:', err));
@@ -189,7 +188,7 @@ function initFormFunctionality() {
     if (!form) return;
 
     form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the default form submission
+        event.preventDefault(); 
 
         submitFormWithAjax(form);
     });
@@ -247,19 +246,17 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => response.text())
             .then(data => {
                 document.getElementById('footer-placeholder').innerHTML = data;
-                // Now that the footer is loaded, set the current year
+
                 const yearSpan = document.getElementById('year');
                 if (yearSpan) {
                     yearSpan.textContent = new Date().getFullYear();
                 }
             })
             .catch(err => console.error('Failed to load footer: ', err));
-        //pop a new tab for external domain links
+
         document.querySelectorAll('a').forEach(link => {
             if (link.hostname !== window.location.hostname) {
                 link.target = '_blank';
-                // Optional: Add rel="noopener noreferrer" for security and performance reasons - if you want to attribute the link to your site, comment out the line below
-                link.rel = 'noopener noreferrer';
             }
         });
     }
